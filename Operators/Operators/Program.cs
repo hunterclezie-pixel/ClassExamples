@@ -32,6 +32,18 @@
             Console.WriteLine(a++); //print then increment
             Console.WriteLine(a);
 
+            int firstnumber = 5;
+            int secondnumber = 10;
+            Console.WriteLine($"{firstnumber} + {secondnumber} = {firstnumber + secondnumber}");
+            Console.WriteLine($"{firstnumber} - {secondnumber} = {firstnumber - secondnumber}");
+            Console.WriteLine($"{firstnumber} * {secondnumber} = {firstnumber * secondnumber}");
+            Console.WriteLine($"{firstnumber} / {secondnumber} = {firstnumber / secondnumber}");
+            Console.WriteLine($"{firstnumber} % {secondnumber} = {firstnumber % secondnumber}");
+            /*Console.WriteLine(5 - 3);
+            Console.WriteLine(5 * 2);
+            Console.WriteLine(13 / 5); //integer
+            Console.WriteLine(13 % 5); //remainder*/
+
             //pause
             Console.Read();
         }
