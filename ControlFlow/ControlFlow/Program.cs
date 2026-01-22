@@ -27,8 +27,12 @@
             */
 
             //Compound if, else if, and else statement
-            int score = 90;
-            if (score >= 90)
+            int score = 101;
+            if (score >= 100)
+            {
+                Console.WriteLine("Ace!");
+            }
+                if (score >= 90)
             {
                 Console.WriteLine("Excellent! You got an A.");
             }
