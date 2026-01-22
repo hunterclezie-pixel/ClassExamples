@@ -4,11 +4,41 @@
     {
         static void Main(string[] args)
         {
-            
+            /*
+            //simple if statement
             int score = 95;
             if (score >= 90)
             {
                 Console.WriteLine("Excellent! You got an A.");
+            }
+            */
+
+            /*
+            //if and else statement (True and false)
+            int score = 75;
+            if (score >= 60)
+            {
+                Console.WriteLine("Pass. You did well enough.");
+            }
+            else
+            {
+                Console.WriteLine("Fail. Let's review and try again.");
+            }
+            */
+
+            //Compound if, else if, and else statement
+            int score = 90;
+            if (score >= 90)
+            {
+                Console.WriteLine("Excellent! You got an A.");
+            }
+            else if (score >= 70)
+            {
+                Console.WriteLine("Good job! You passed.");
+            }
+            else
+            {
+                Console.WriteLine("Keep trying! Practice makes perfect.");
             }
 
             //pause
