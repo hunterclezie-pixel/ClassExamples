@@ -26,6 +26,7 @@
             }
             */
 
+            /*
             //Compound if, else if, and else statement
             int score = 101;
             if (score >= 100)
@@ -44,6 +45,42 @@
             {
                 Console.WriteLine("Keep trying! Practice makes perfect.");
             }
+            */
+
+            Console.WriteLine("Please enter a number for the day of the week, 1-7");
+            string userinput = Console.ReadLine();
+            switch (userinput)
+            {
+                case "1":
+                    Console.WriteLine("It's Monday. Time to start the week!");
+                    break;
+                case "2":
+                    Console.WriteLine("It's Tuesday. Keep going!");
+                    break;
+                case "3":
+                    Console.WriteLine("It's Wednesday. Halfway there!");
+                    break;
+                case "4":
+                    Console.WriteLine("It's Thursday. Your Thirsty for the weekend!");
+                    break;
+                case "5":
+                    Console.WriteLine("It's Friday! Yayy!");
+                    break;
+                case "6":
+                    Console.WriteLine("It's Saturday! Time to chill");
+                    break;
+                case "7":
+                    Console.WriteLine("It's Sunday! Prep for a new week");
+                    break;
+                default:
+                    Console.WriteLine("It's another day. Make it count!");
+                    break;
+            }
+
+            string userinput = "";
+            int firstNumber, secondumber;
+            Console.WriteLine("please enter a number");
+            firstNumber = Console.ReadLine();
 
             //pause
             Console.Read();
