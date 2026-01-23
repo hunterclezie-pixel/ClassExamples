@@ -33,6 +33,15 @@
                 number++;
             } while (number <= 3);
 
+            string userinput = "";
+            Console.WriteLine("The password is 12345 just like my luggage");
+
+            while (Console.ReadLine() != "12345");
+            {
+                Console.WriteLine($"All my Secrets");
+                number++;
+            }
+
             //pause
             Console.Read();
         }
