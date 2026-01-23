@@ -17,12 +17,16 @@
             */
 
             int number = 1;
+
+            //only runs if conditions are true
             while (number <= 3)
             {
                 Console.WriteLine($"In while loop Number: {number}");
                 number++;
             }
+            
 
+            //always runs at least one time
             do
             {
                 Console.WriteLine($"in do loop Number: {number}");
