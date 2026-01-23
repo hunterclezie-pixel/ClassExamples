@@ -47,6 +47,7 @@
             }
             */
 
+            /*
             Console.WriteLine("Please enter a number for the day of the week, 1-7");
             string userinput = Console.ReadLine();
             switch (userinput)
@@ -76,11 +77,20 @@
                     Console.WriteLine("It's another day. Make it count!");
                     break;
             }
+            */
 
             string userinput = "";
-            int firstNumber, secondumber;
-            Console.WriteLine("please enter a number");
-            firstNumber = Console.ReadLine();
+            int firstNumber, secondNumber;
+
+            Console.WriteLine("please enter your first number");
+            userinput = Console.ReadLine();
+            firstNumber = int.Parse(userinput);
+            Console.WriteLine($"You entered {firstNumber}");
+
+            Console.WriteLine("please enter your second number");
+            userinput = Console.ReadLine();
+            secondNumber = int.Parse(userinput);
+            Console.WriteLine($"You entered {secondNumber}");
 
             //pause
             Console.Read();
