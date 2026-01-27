@@ -1,4 +1,6 @@
-﻿namespace LoopExample
+﻿using System.Data;
+
+namespace LoopExample
 {
     internal class Program
     {
@@ -16,31 +18,48 @@
             }
             */
 
-            int number = 1;
+            //int number = 1;
 
-            //only runs if conditions are true
-            while (number <= 3)
-            {
-                Console.WriteLine($"In while loop Number: {number}");
-                number++;
-            }
-            
+            ////only runs if conditions are true
+            //while (number <= 3)
+            //{
+            //    Console.WriteLine($"In while loop Number: {number}");
+            //    number++;
+            //}
+
 
             //always runs at least one time
-            do
-            {
-                Console.WriteLine($"in do loop Number: {number}");
-                number++;
-            } while (number <= 3);
+            //do
+            //{
+            //    Console.WriteLine($"in do loop Number: {number}");
+            //    number++;
+            //} while (number <= 3);
 
-            string userinput = "";
-            Console.WriteLine("The password is 12345 just like my luggage");
+            //string userinput = "";
+            //Console.WriteLine("The password is 12345 just like my luggage");
 
-            while (Console.ReadLine() != "12345");
+            //while (Console.ReadLine() != "12345") ;
+            //{
+            //    Console.WriteLine($"All my Secrets");
+            //    number++;
+            //}
+
+            for (int row = 0; row < 10; row++)
             {
-                Console.WriteLine($"All my Secrets");
-                number++;
+                for (int column = 0; column < 10; column++)
+                {
+                    Console.Write((row + column).ToString().PadLeft(3));
+                }
+                    Console.WriteLine();
             }
+
+            ////Renaming and columns (column = i)
+            //for (int column = 0; column < 10; column++)
+            //{
+
+            //Console.Write(column.ToString().PadLeft(3));
+
+            //}
 
             //pause
             Console.Read();
