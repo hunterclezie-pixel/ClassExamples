@@ -28,7 +28,9 @@
             {
                 Console.WriteLine(fruit);
             }
- 
+
+            Console.WriteLine($"The length of the fruits is: {fruits.Length}");
+
             //Pause
             Console.Read();
         }
