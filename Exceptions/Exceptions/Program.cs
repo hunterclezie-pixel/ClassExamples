@@ -29,7 +29,7 @@
                 {
                     if (userinput == "Q"|| userinput == "q")
                     {
-                        message = "Have a nice day!";
+                        Console.WriteLine("Have a nice day!");
                         isValid = true;
                     }
 
