@@ -1,10 +1,10 @@
 ﻿/*
 TODO
-[ ] User can quit at any time, skips remaining prompts
-[ ] get valid number - always runs once
-[ ] get valid number - runs if user didnt quit
-[ ] get a chilce - runs if user didnt quit
-[ ] repeat the whole thing if the user didnt quit
+[x] User can quit at any time, skips remaining prompts
+[x] get valid number - always runs once
+[x] get valid number - runs if user didnt quit
+[x] get a chilce - runs if user didnt quit
+[x] repeat the whole thing if the user didnt quit
 */
 namespace ControlFlowSequences
 {
@@ -39,8 +39,10 @@ namespace ControlFlowSequences
                     }
                     
                 }
-            } while (validResponse == false || userQuit == false);
-            
+            } while (validResponse == false && userQuit == false);
+
+            Console.WriteLine("end of first loop");
+
             validResponse = false; //reset flag
             //Second number
             while (validResponse == false && userQuit == false)
@@ -67,6 +69,9 @@ namespace ControlFlowSequences
                 }
             }
 
+            Console.WriteLine("end of second loop");
+
+            validResponse = false;
             //Operation Choice
             while (validResponse == false && userQuit == false)
             {
@@ -106,6 +111,8 @@ namespace ControlFlowSequences
                         break;
                 }
             }
+
+            Console.WriteLine("end of third loop");
 
             //pause
             Console.Read();
