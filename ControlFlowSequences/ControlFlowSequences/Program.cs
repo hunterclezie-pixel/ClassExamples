@@ -84,20 +84,9 @@ namespace ControlFlowSequences
                     switch (userinput)
                     {
                         case "1":
-                            Console.WriteLine("You have chosen wiseley");
+                            Console.WriteLine($"{userinput} + {userinput} = {userinput + userinput}");
                             break;
-
-                        case "2":
-                            Console.WriteLine("You have chosen wiseley");
-                            break;
-
-                        case "3":
-                            Console.WriteLine("You have chosen wiseley");
-                            break;
-
-                        case "4":
-                            Console.WriteLine("You have chosen wiseley");
-                            break;
+                        
 
                         case "Q":
                             userQuit = true;
