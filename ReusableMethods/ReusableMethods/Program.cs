@@ -5,10 +5,35 @@
         static void Main(string[] args)
         {
 
-            TestRandomNumber();
+            //TestRandomNumber();
+            for (int i = 0; i < 10; i++)
+            {
+                RunningTotal(5, false);
+
+            }
+
+            Console.WriteLine(RunningTotal());
+            RunningTotal(0, true);
+            Console.WriteLine(RunningTotal());
 
             //pause
             Console.Read();
+        }
+
+        // [x] keep track of a running total
+        // [x] optionally add the integer passed in as an argument to the total
+        // [x] return the running total
+        // [x] optionally clear the running total
+        static private int _runningTotal = 0;
+
+        static int RunningTotal(int currentValue = 0, bool clear = false)
+        {
+            _runningTotal += currentValue;
+            if (clear)
+            { 
+                _runningTotal = 0;
+            }
+            return _runningTotal;
         }
 
         static void TestRandomNumber()
