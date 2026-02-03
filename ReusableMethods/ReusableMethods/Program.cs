@@ -6,18 +6,44 @@
         {
 
             //TestRandomNumber();
-            for (int i = 0; i < 10; i++)
-            {
-                RunningTotal(5, false);
-
-            }
-
-            Console.WriteLine(RunningTotal());
-            RunningTotal(0, true);
-            Console.WriteLine(RunningTotal());
 
             //pause
             Console.Read();
+        }
+
+        static void TestRunningTotal()
+        {
+            string userInput = "";
+            do
+            {
+            Console.WriteLine("Enter a number to add to runing total_" +
+                "\n enter c to clear\nenter q to quit");
+            Console.ReadLine();
+                try
+                {
+                    RunningTotal(int.Parse(userInput));
+                }
+                catch (Exception) 
+                {
+                    switch (userInput)
+                    {
+                        case "c":
+                            RunningTotal(0, true);
+                            break;
+                        case "C":
+                            RunningTotal(0, true);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                Console.WriteLine($"You entereed {userInput}");
+                Console.WriteLine($"The current total is {RunningTotal()}");
+            } while (userInput != "Q" || userInput != "q");
+
+
+            Console.WriteLine("Have a nice day!");
+        
         }
 
         // [x] keep track of a running total
