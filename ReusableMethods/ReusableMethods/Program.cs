@@ -6,6 +6,7 @@
         {
 
             //TestRandomNumber();
+            TestRunningTotal();
 
             //pause
             Console.Read();
@@ -14,17 +15,22 @@
         static void TestRunningTotal()
         {
             string userInput = "";
+
+            //run until user quits
             do
             {
-            Console.WriteLine("Enter a number to add to runing total_" +
-                "\n enter c to clear\nenter q to quit");
-            Console.ReadLine();
+               // Prompt User fir a number or action
+            Console.WriteLine("Enter a number to add to runing total" +
+                "\nenter c to clear\nenter q to quit");
+            userInput = Console.ReadLine();
                 try
                 {
+                //Test if it is a number
                     RunningTotal(int.Parse(userInput));
                 }
                 catch (Exception) 
                 {
+                    //
                     switch (userInput)
                     {
                         case "c":
@@ -37,9 +43,10 @@
                             break;
                     }
                 }
+                //show the user the current status
                 Console.WriteLine($"You entereed {userInput}");
                 Console.WriteLine($"The current total is {RunningTotal()}");
-            } while (userInput != "Q" || userInput != "q");
+            } while (userInput != "Q" && userInput != "q");
 
 
             Console.WriteLine("Have a nice day!");
