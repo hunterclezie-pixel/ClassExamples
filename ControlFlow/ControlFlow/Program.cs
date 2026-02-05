@@ -79,19 +79,6 @@
             }
             */
 
-            string userinput = "";
-            int firstNumber, secondNumber;
-
-            Console.WriteLine("please enter your first number");
-            userinput = Console.ReadLine();
-            firstNumber = int.Parse(userinput);
-            Console.WriteLine($"You entered {firstNumber}");
-
-            Console.WriteLine("please enter your second number");
-            userinput = Console.ReadLine();
-            secondNumber = int.Parse(userinput);
-            Console.WriteLine($"You entered {secondNumber}");
-
             //pause
             Console.Read();
         }

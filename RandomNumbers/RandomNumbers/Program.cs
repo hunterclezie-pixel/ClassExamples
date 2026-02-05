@@ -13,7 +13,7 @@
                 //rand.Next(min,max) max is not inclusive
                 int n = rand.Next(1, 7); // Random number between 1 and 6
                 
-                Console.Write(n);
+                Console.WriteLine(n);
             }
 
             //pause
