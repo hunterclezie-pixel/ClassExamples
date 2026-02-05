@@ -4,12 +4,13 @@
     {
         static void Main(string[] args)
         {
+
             int thing = 0;
             string[] fruits = new string[7];
-            string[] daysOfTheWeek = ["Sunday","Monday","Tuesday","Wednesday", "Thursday","Friday","Saturday"];
-            int[,] grid = new int[5,5];
+            string[] daysOfTheWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            int[,] grid = new int[5, 15];
 
-
+            /*
             fruits[0] = "apple";
             fruits[1] = "banana";
             fruits[2] = "Kiwi";
@@ -43,9 +44,20 @@
             //    }
             //}
             //        Console.WriteLine(grid[3,3]);
+            */
+
+            for (int column = 0; column < 5; column++)
+            {
+                for (int row = 0; row < 15; row++)
+                {
+                    grid[column, row] = column * row;
+                }
+
+                Console.WriteLine(grid[3, 3]);
 
                 //Pause
                 Console.Read();
+            }
         }
     }
 }
