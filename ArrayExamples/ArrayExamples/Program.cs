@@ -45,16 +45,6 @@
             //}
             //        Console.WriteLine(grid[3,3]);
             */
-
-            for (int column = 0; column < 5; column++)
-            {
-                for (int row = 0; row < 15; row++)
-                {
-                    grid[column, row] = column * row;
-                }
-
-                Console.WriteLine(grid[3, 3]);
-
                 //Pause
                 Console.Read();
             }

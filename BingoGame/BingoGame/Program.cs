@@ -15,35 +15,80 @@ namespace BingoGame
 {
     internal class Program
     {
+        //make this global so it can be accessed by all methods
+        static bool[,] drawnBalls = new bool[5, 15];
         static void Main(string[] args)
         {
-            bool[,] drawnBalls = new bool[5, 15];
 
-            drawnBalls[1, 0] = true;
+            drawnBalls[1,0] = true;
+            drawnBalls[4,5] = true;
+            drawnBalls[3,6] = true;
+            drawnBalls[2,13] = true;
+            drawnBalls[0,1] = true;
 
-            Display();
+            //Display();
+            DrawBall();
             //pause
             Console.Read();
         }
 
-
         static void Display()
         {
-            int padding = 3;    
+            int padding = 3;
+            int prettyNumber = 0;
+            string placeHolder = "";
+            string columnSeperator = " |";
+            string currentRow = "";
             //print heading row
             string[] heading = { "B", "I", "N", "G", "O" };
             foreach (string thing in heading)
             { 
-                Console.Write(thing.PadLeft(padding) + " |");
+                Console.Write(thing.PadLeft(padding) + columnSeperator);
             }
             Console.WriteLine();
 
             //print the rest of the rows
-            for (int letter = 0; letter < 5; letter++)
+            for (int number = 1; number <= 15; number++)
             {
-                Console.Write(letter.ToString().PadLeft(padding) + " |");
+
+                //assemble the row
+                for (int letter = 0; letter < 5; letter++)
+                {
+                    if (drawnBalls[letter, number - 1])
+                    {
+                        prettyNumber = number + (letter * 15);
+                        currentRow += prettyNumber.ToString().PadLeft(padding) + columnSeperator;
+                    }
+                    else
+                    { 
+                        currentRow += placeHolder.PadLeft(padding) + columnSeperator;
+
+                    }
+                }
+                Console.WriteLine(currentRow);
+                currentRow = ""; //Resets the row for the next iteration    
             }
         
+        }
+
+        static void DrawBall()
+        {
+            for (int i = 0; i < 100; i++)
+            {
+                Console.WriteLine(RandomNumberZeroTo(14));
+            
+            }
+        }
+        /// <summary>
+        /// Get a random integer from 0 to max inclusive
+        /// </summary>
+        /// <param name="max"></param>
+        /// <returns></returns>
+        static private int RandomNumberZeroTo(int max)
+        {
+            int range = max + 1; //make max inclusive
+            Random rand = new Random();
+            return rand.Next(range);
         }
     }
 }
