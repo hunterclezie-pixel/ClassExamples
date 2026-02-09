@@ -13,6 +13,7 @@ using System.Net.NetworkInformation;
 
 namespace BingoGame
 {
+    //Drawing two balls every time???
     internal class Program
     {
         //make this global so it can be accessed by all methods
