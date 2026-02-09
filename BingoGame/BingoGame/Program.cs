@@ -31,7 +31,7 @@ namespace BingoGame
             Console.Clear();
             DrawBall();
             Display();
-            Console.ReadLine();
+            Console.ReadLine(); //fix double draw
             } while (true);
 
             //pause
