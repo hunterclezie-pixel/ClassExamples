@@ -21,18 +21,18 @@ namespace BingoGame
         static void Main(string[] args)
         {
 
-            drawnBalls[1,0] = true;
-            drawnBalls[4,5] = true;
-            drawnBalls[3,6] = true;
-            drawnBalls[2,13] = true;
-            drawnBalls[0,1] = true;
+            //drawnBalls[1,0] = true;
+            //drawnBalls[4,5] = true;
+            //drawnBalls[3,6] = true;
+            //drawnBalls[2,13] = true;
+            //drawnBalls[0,1] = true;
 
             do 
             { 
-            Display();
-            DrawBall();
-            Console.Read();
             Console.Clear();
+            DrawBall();
+            Display();
+            Console.ReadLine();
             } while (true);
 
             //pause
