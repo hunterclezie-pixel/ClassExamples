@@ -8,6 +8,8 @@
 * [x] get a random number to determine ball letter
 * [x] get a random number to determine ball number
 * [x] check if ball has already been drawn. no: mark as drawn, yes: draw another
+* [x] Usability
+* [x] fix intro, wait to draw first ball
 */
 using System.Net.NetworkInformation;
 
