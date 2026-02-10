@@ -2,7 +2,7 @@
 * TODO:
 * [x] Track bingo balls drawn in a two dimensional array
 * [x] Display status of all balls on the console
-* [] Clear all drawn balls to start a new game
+* [x] Clear all drawn balls to start a new game
 * [x] Let the user quit at any time
 * [x] Draw a random ball
 * [x] get a random number to determine ball letter
