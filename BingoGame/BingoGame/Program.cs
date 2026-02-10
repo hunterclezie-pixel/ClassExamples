@@ -27,7 +27,7 @@ namespace BingoGame
             Console.Clear();
                 if (ballCount < 75)
                 {
-                    Console.WriteLine("Welcome to Bingo! please hit Enter to play");
+                    Console.WriteLine("Welcome to Bingo! please hit \"Enter\" to play");
                     Console.WriteLine("Press \"Q\" to quit anytime");
                     Console.WriteLine("Press \"C\" to clear for a new game any time");
                     DrawBall();
