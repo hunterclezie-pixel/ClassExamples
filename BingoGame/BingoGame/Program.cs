@@ -26,16 +26,24 @@ namespace BingoGame
             {
             Console.Clear();
                 if (ballCount < 75)
-                { 
+                {
+                    Console.WriteLine("Welcome to Bingo! please hit Enter to play");
+                    Console.WriteLine("Press \"Q\" to quit anytime");
+                    Console.WriteLine("Press \"C\" to clear for a new game any time");
                     DrawBall();
                     ballCount++;
                 }
 
-            Console.WriteLine("Welcome to Bingo! please hit Enter to play, " +
-                "hit \"Q\" to quit, or hit \"C\" to clear for a new game");
-            Console.WriteLine($"Ball count: {ballCount}");
+                else 
+                { 
+                    Console.WriteLine("All balls have been drawn!");
+                    Console.WriteLine("Press \"Q\" to quit");
+                    Console.WriteLine("Press \"C\" to clear for a new game!");
+                }
+
+                Console.WriteLine($"Ball count: {ballCount}");
                 Display();
-            userInput = Console.ReadLine(); //fix double draw
+                userInput = Console.ReadLine(); //fix double draw
                 if (userInput == "C" || userInput == "c")
                 {
                     ClearDrawnBalls();
@@ -43,8 +51,9 @@ namespace BingoGame
                 }
 
                 } while (userInput != "Q" && userInput != "q");
+
             Console.Clear();
-            Console.WriteLine("Thanks for playing, have a nice day!");
+            Console.WriteLine("Thank you for playing Bingo, have a nice day!");
 
             //pause
             Console.Read();
