@@ -3,7 +3,7 @@
 * [x] Track bingo balls drawn in a two dimensional array
 * [x] Display status of all balls on the console
 * [] Clear all drawn balls to start a new game
-* [] Let the user quit at any time
+* [x] Let the user quit at any time
 * [x] Draw a random ball
 * [x] get a random number to determine ball letter
 * [x] get a random number to determine ball number
@@ -20,16 +20,31 @@ namespace BingoGame
         static void Main(string[] args)
         {
             string userInput = "";
+            int ballCount = 0;
 
             do 
-            { 
+            {
             Console.Clear();
-            DrawBall();
-            Display();
+                if (ballCount < 75)
+                { 
+                    DrawBall();
+                    ballCount++;
+                }
+
+            Console.WriteLine("Welcome to Bingo! please hit Enter to play, " +
+                "hit \"Q\" to quit, or hit \"C\" to clear for a new game");
+            Console.WriteLine($"Ball count: {ballCount}");
+                Display();
             userInput = Console.ReadLine(); //fix double draw
-            } while (userInput != "Q" && userInput != "q");
+                if (userInput == "C" || userInput == "c")
+                {
+                    ClearDrawnBalls();
+                    ballCount = 0;
+                }
+
+                } while (userInput != "Q" && userInput != "q");
             Console.Clear();
-            Console.WriteLine("Thanks for playing!");
+            Console.WriteLine("Thanks for playing, have a nice day!");
 
             //pause
             Console.Read();
@@ -91,6 +106,18 @@ namespace BingoGame
         /// </summary>
         /// <param name="max"></param>
         /// <returns></returns>
+        
+        static void ClearDrawnBalls()
+        {
+            for (int letter = 0; letter < 5; letter++)
+            {
+                for (int number = 0; number < 15; number++)
+                {
+                    drawnBalls[letter, number] = false;
+                }
+            }
+        }   
+
         static private int RandomNumberZeroTo(int max)
         {
             int range = max + 1; //make max inclusive
