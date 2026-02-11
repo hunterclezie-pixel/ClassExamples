@@ -120,13 +120,17 @@ namespace BingoGame
         
         static void ClearDrawnBalls()
         {
-            for (int letter = 0; letter < 5; letter++)
-            {
-                for (int number = 0; number < 15; number++)
-                {
-                    drawnBalls[letter, number] = false;
-                }
-            }
+            bool[,] emptyArray = new bool[5, 15];
+            drawnBalls = emptyArray;
+            drawnBalls = new bool[5, 15];
+
+            //for (int letter = 0; letter < 5; letter++)
+            //{
+            //    for (int number = 0; number < 15; number++)
+            //    {
+            //        drawnBalls[letter, number] = false;
+            //    }
+            //}
         }   
 
         static private int RandomNumberZeroTo(int max)
