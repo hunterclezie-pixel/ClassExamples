@@ -52,6 +52,15 @@
             Console.WriteLine(theNumber);
         }
 
+        static void ShowSquareRootOf(int thisNumber)
+        {
+            Console.WriteLine(Math.Sqrt(thisNumber));
+        }
 
+        static double CosInDegrees(double angle)
+        {
+            angle = (Math.PI / 180) * angle;
+            return Math.Cos(angle);
+        }
     }
 }
