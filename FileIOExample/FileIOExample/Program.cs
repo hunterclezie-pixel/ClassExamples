@@ -6,7 +6,8 @@
         {
             Console.WriteLine("Hello, World!");
 
-            ReadFile();
+            ReadEntireFile("..\\..\\..\\TestFile.txt");
+            //ReadFile();
             //Commented out the method calls to prevent overwriting the file each time the program is run. Uncomment the method calls to test the functionality.
             //WriteToFile();
             //AppendToFile();
@@ -44,6 +45,19 @@
                 //Console.Write(testFile.Peek());
                 Console.WriteLine(testFile.ReadLine());
                 Console.WriteLine(testFile.ReadLine());
+            }
+        }
+
+        static void ReadEntireFile(string filePath) 
+        {
+            using (StreamReader testFile = new StreamReader("..\\..\\..\\TestFile.txt"))
+
+            {
+                do
+                {
+                    Console.WriteLine(testFile.ReadLine());
+
+                } while (!testFile.EndOfStream);
             }
         }
     }
