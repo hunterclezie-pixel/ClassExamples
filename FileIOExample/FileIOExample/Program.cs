@@ -6,7 +6,7 @@
         {
             Console.WriteLine("Hello, World!");
 
-            FileToArray("..\\..\\..\\email.txt");
+            FileToArray("..\\..\\..\\email.txt"); //TODO: add display array meathod
             //Commented out the method calls to prevent overwriting the file each time the program is run. Uncomment the method calls to test the functionality.
             //ReadEntireFile("..\\..\\..\\email.txt");
             //ReadFile();
