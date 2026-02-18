@@ -6,9 +6,10 @@
         {
             Console.WriteLine("Hello, World!");
 
-            ReadEntireFile("..\\..\\..\\TestFile.txt");
-            //ReadFile();
+            FileToArray("..\\..\\..\\email.txt");
             //Commented out the method calls to prevent overwriting the file each time the program is run. Uncomment the method calls to test the functionality.
+            //ReadEntireFile("..\\..\\..\\email.txt");
+            //ReadFile();
             //WriteToFile();
             //AppendToFile();
 
@@ -40,7 +41,7 @@
         static void ReadFile()
         {
             using (StreamReader testFile = new StreamReader("..\\..\\..\\TestFile.txt"))
-            
+
             {
                 //Console.Write(testFile.Peek());
                 Console.WriteLine(testFile.ReadLine());
@@ -48,9 +49,9 @@
             }
         }
 
-        static void ReadEntireFile(string filePath) 
+        static void ReadEntireFile(string filePath)
         {
-            using (StreamReader testFile = new StreamReader("..\\..\\..\\TestFile.txt"))
+            using (StreamReader testFile = new StreamReader(filePath))
 
             {
                 do
@@ -59,6 +60,54 @@
 
                 } while (!testFile.EndOfStream);
             }
+        }
+
+        static int CountOfLinesIn(string filePath)
+        {
+            int count = 0;
+            using (StreamReader testFile = new StreamReader(filePath))
+
+            {
+                do
+                {
+                    testFile.ReadLine();
+                    count++;
+                } while (!testFile.EndOfStream);
+            }
+
+            return count;
+        }
+
+        static string[,] FileToArray(string filePath)
+        {
+            string[,] customerData = new string[4, CountOfLinesIn(filePath)];
+            string[] temp;
+            int counter = 0;
+            
+            using (StreamReader testFile = new StreamReader(filePath))
+            {
+                do
+                {
+                    temp = testFile.ReadLine().Split(",");
+                    if (temp.Length == 5)
+                    {
+                        temp[0] = temp[0].Replace("\"$$", "");
+                        temp[3] = temp[3].Replace("\"", "");
+                        customerData[0, counter] = temp[0];
+                        customerData[1, counter] = temp[1];
+                        customerData[2, counter] = temp[2];
+                        customerData[3, counter] = temp[3];
+                        //customerData[4, counter] = temp[4];
+                        Console.WriteLine(temp[3]);
+
+                    }
+
+                    counter++;
+
+                } while (!testFile.EndOfStream);
+            }
+
+            return customerData;
         }
     }
 }
