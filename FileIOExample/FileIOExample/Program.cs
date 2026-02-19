@@ -97,13 +97,8 @@
                         customerData[1, counter] = temp[1];
                         customerData[2, counter] = temp[2];
                         customerData[3, counter] = temp[3];
-                        //customerData[4, counter] = temp[4];
-                        Console.WriteLine(temp[3]);
-
                     }
-
                     counter++;
-
                 } while (!testFile.EndOfStream);
             }
 
