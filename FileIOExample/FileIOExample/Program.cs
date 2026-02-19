@@ -4,9 +4,11 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            string path = "..\\..\\..\\email.txt";
+            string[,] customerInfo = new string[4, CountOfLinesIn(path)];
 
-            FileToArray("..\\..\\..\\email.txt"); //TODO: add display array meathod
+            customerInfo = FileToArray(path); //TODO: add display array meathod
+            DisplayData(customerInfo);
             //Commented out the method calls to prevent overwriting the file each time the program is run. Uncomment the method calls to test the functionality.
             //ReadEntireFile("..\\..\\..\\email.txt");
             //ReadFile();
@@ -103,6 +105,34 @@
             }
 
             return customerData;
+        }
+
+        static void DisplayData(string[,] data)
+        {
+            string formattedRow = "";
+
+            for (int row = 0; row < data.GetLength(1); row++)
+            {
+                for (int column = 0; column < data.GetLength(0); column++)
+                {
+                    try
+                    {
+                        if (data[column, row] != null)
+                        {
+                            formattedRow += data[column, row].PadRight(15);
+                        }
+                    }
+                    catch (Exception)
+                    { 
+                    
+                    }
+                }
+                if (formattedRow != "")
+                { 
+                    Console.WriteLine(formattedRow);
+                }
+                formattedRow = "";
+            }
         }
     }
 }
