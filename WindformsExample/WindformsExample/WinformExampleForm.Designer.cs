@@ -28,19 +28,69 @@
         /// </summary>
         private void InitializeComponent()
         {
+            SubmitButton = new Button();
+            ExitButton = new Button();
+            NameTextBox = new TextBox();
+            NameLabel = new Label();
             SuspendLayout();
             // 
-            // Form1
+            // SubmitButton
+            // 
+            SubmitButton.Location = new Point(565, 287);
+            SubmitButton.Name = "SubmitButton";
+            SubmitButton.Size = new Size(94, 29);
+            SubmitButton.TabIndex = 0;
+            SubmitButton.Text = "Submit";
+            SubmitButton.UseVisualStyleBackColor = true;
+            SubmitButton.Click += SubmitButton_Click;
+            // 
+            // ExitButton
+            // 
+            ExitButton.Location = new Point(565, 322);
+            ExitButton.Name = "ExitButton";
+            ExitButton.Size = new Size(94, 29);
+            ExitButton.TabIndex = 1;
+            ExitButton.Text = "Exit";
+            ExitButton.UseVisualStyleBackColor = true;
+            ExitButton.Click += ExitButton_Click;
+            // 
+            // NameTextBox
+            // 
+            NameTextBox.Location = new Point(222, 124);
+            NameTextBox.Name = "NameTextBox";
+            NameTextBox.Size = new Size(293, 27);
+            NameTextBox.TabIndex = 2;
+            // 
+            // NameLabel
+            // 
+            NameLabel.AutoSize = true;
+            NameLabel.Location = new Point(166, 127);
+            NameLabel.Name = "NameLabel";
+            NameLabel.Size = new Size(49, 20);
+            NameLabel.TabIndex = 3;
+            NameLabel.Text = "Name";
+            // 
+            // WinformExampleForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Name = "Form1";
+            Controls.Add(NameLabel);
+            Controls.Add(NameTextBox);
+            Controls.Add(ExitButton);
+            Controls.Add(SubmitButton);
+            Name = "WinformExampleForm";
             Text = "Form1";
             Load += Form1_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Button SubmitButton;
+        private Button ExitButton;
+        private TextBox NameTextBox;
+        private Label NameLabel;
     }
 }
