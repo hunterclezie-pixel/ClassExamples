@@ -5,8 +5,20 @@ namespace WindformsExample
         public WinformExampleForm()
         {
             InitializeComponent();
+            SetDefaults();
         }
 
+        private void SetDefaults()
+        {
+            NameTextBox.Text = "";
+            AgeTextBox.Text = "";
+            CityTextBox.Text = "";
+            PhoneTextBox.Text = "";
+
+            UpperCaseRadioButton.Checked = true;
+        }
+
+        //Event Handlers Below
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -35,6 +47,16 @@ namespace WindformsExample
         private void PhoneTextBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            SetDefaults();
         }
     }
 }
