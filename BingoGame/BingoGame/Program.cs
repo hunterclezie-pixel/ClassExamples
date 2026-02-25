@@ -52,7 +52,7 @@ namespace BingoGame
                     ballCount = 0;
                 }
 
-                } while (userInput != "Q" && userInput != "q");
+            } while (userInput != "Q" && userInput != "q");
 
             Console.Clear();
             Console.WriteLine("Thank you for playing Bingo, have a nice day!");
