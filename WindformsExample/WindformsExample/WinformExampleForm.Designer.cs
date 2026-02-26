@@ -127,6 +127,7 @@
             AgeTextBox.Name = "AgeTextBox";
             AgeTextBox.Size = new Size(293, 27);
             AgeTextBox.TabIndex = 2;
+            AgeTextBox.TextChanged += AgeTextBox_TextChanged;
             // 
             // PhoneLabel
             // 

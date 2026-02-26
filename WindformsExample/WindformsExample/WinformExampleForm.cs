@@ -13,6 +13,7 @@ namespace WindformsExample
             NameTextBox.Text = "";
             NameTextBox.BackColor = Color.LightYellow;
             AgeTextBox.Text = "";
+            AgeTextBox.BackColor = Color.LightYellow;
             CityTextBox.Text = "";
             PhoneTextBox.Text = "";
 
@@ -100,13 +101,27 @@ namespace WindformsExample
         private void NameTextBox_TextChanged(object sender, EventArgs e)
         {
             if (NameTextBox.Text != "")
-            { 
+            {
                 NameTextBox.BackColor = Color.White;
                 SubmitButton.Enabled = true;
             }
             else
             {
                 NameTextBox.BackColor = Color.LightYellow;
+                SubmitButton.Enabled = false;
+            }
+        }
+
+        private void AgeTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (AgeTextBox.Text != "")
+            {
+                AgeTextBox.BackColor = Color.White;
+                SubmitButton.Enabled = true;
+            }
+            else
+            {
+                AgeTextBox.BackColor = Color.LightYellow;
                 SubmitButton.Enabled = false;
             }
         }
