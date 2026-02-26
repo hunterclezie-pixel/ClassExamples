@@ -21,8 +21,10 @@ namespace WindformsExample
             SubmitButton.Enabled = false;
         }
 
-        private void ValidateFields() 
+        private bool ValidateFields() 
         {
+            bool valid = true;
+
             string message = "";
             if (PhoneTextBox.Text == "")
             {
@@ -50,8 +52,27 @@ namespace WindformsExample
 
             if (message != "")
             { 
+                valid = false;
                 MessageBox.Show(message);
             
+            }
+            return valid;
+        }
+
+        private void Uppercase()
+        {
+            if (UpperCaseRadioButton.Checked)
+            { 
+                NameTextBox.Text = NameTextBox.Text.ToUpper();
+            
+            }
+        }
+
+        private void Reverse() 
+        {
+            if (ReverseCaseRadioButton.Checked)
+            { 
+                NameTextBox.Text = new string (NameTextBox.Text.Reverse().ToArray());
             }
         }
 
@@ -68,9 +89,12 @@ namespace WindformsExample
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-            ValidateFields();
-
-            //this.Text = NameTextBox.Text;
+            if (ValidateFields());
+            { 
+                //this.Text = NameTextBox.Text;
+                Uppercase();
+                Reverse();
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
