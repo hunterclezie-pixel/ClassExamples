@@ -188,7 +188,7 @@
             // checkBox3
             // 
             checkBox3.AutoSize = true;
-            checkBox3.Location = new Point(296, 255);
+            checkBox3.Location = new Point(220, 256);
             checkBox3.Name = "checkBox3";
             checkBox3.Size = new Size(101, 24);
             checkBox3.TabIndex = 12;
@@ -198,7 +198,7 @@
             // checkBox4
             // 
             checkBox4.AutoSize = true;
-            checkBox4.Location = new Point(296, 222);
+            checkBox4.Location = new Point(220, 223);
             checkBox4.Name = "checkBox4";
             checkBox4.Size = new Size(101, 24);
             checkBox4.TabIndex = 1;
@@ -241,8 +241,9 @@
             // 
             // DisplayLabel
             // 
+            DisplayLabel.BackColor = Color.Gainsboro;
             DisplayLabel.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            DisplayLabel.Location = new Point(451, 31);
+            DisplayLabel.Location = new Point(424, 31);
             DisplayLabel.Name = "DisplayLabel";
             DisplayLabel.Size = new Size(279, 172);
             DisplayLabel.TabIndex = 25;

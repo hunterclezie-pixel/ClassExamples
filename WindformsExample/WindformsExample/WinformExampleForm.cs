@@ -16,6 +16,7 @@ namespace WindformsExample
             AgeTextBox.BackColor = Color.LightYellow;
             CityTextBox.Text = "";
             PhoneTextBox.Text = "";
+            DisplayLabel.Text = "";
 
             UpperCaseRadioButton.Checked = true;
             SubmitButton.Enabled = false;
@@ -59,20 +60,39 @@ namespace WindformsExample
             return valid;
         }
 
-        private void Uppercase()
+        private string Uppercase(string toUpper)
         {
             if (UpperCaseRadioButton.Checked)
             {
-                NameTextBox.Text = NameTextBox.Text.ToUpper();
-
+                return toUpper.ToUpper();
+            }
+            else 
+            {
+                return toUpper;
             }
         }
 
-        private void Reverse()
+        private string LowerCase(string toLower)
+        {
+            if (LowerCaseRadioButton.Checked)
+            {
+                return toLower.ToLower();
+            }
+            else
+            {
+                return toLower;
+            }
+        }
+
+        private string Reverse(string reverseThis)
         {
             if (ReverseCaseRadioButton.Checked)
             {
-                NameTextBox.Text = new string(NameTextBox.Text.Reverse().ToArray());
+                return new string(reverseThis.Reverse().ToArray());
+            }
+            else 
+            { 
+                return reverseThis;
             }
         }
 
@@ -89,11 +109,15 @@ namespace WindformsExample
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-            if (ValidateFields()) ;
+            if (ValidateFields())
             {
                 //this.Text = NameTextBox.Text;
-                Uppercase();
-                Reverse();
+                //Uppercase();
+                //Reverse();
+                DisplayLabel.Text = LowerCase(Reverse(Uppercase( NameTextBox.Text +
+                    "\n" + AgeTextBox.Text +
+                    "\n" + CityTextBox.Text +
+                    "\n" + PhoneTextBox.Text)));
             }
         }
 
