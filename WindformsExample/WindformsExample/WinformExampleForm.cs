@@ -21,7 +21,7 @@ namespace WindformsExample
             SubmitButton.Enabled = false;
         }
 
-        private bool ValidateFields() 
+        private bool ValidateFields()
         {
             bool valid = true;
 
@@ -45,16 +45,16 @@ namespace WindformsExample
             }
 
             if (NameTextBox.Text == "")
-            { 
+            {
                 message = "Name is required.\n" + message;
                 NameTextBox.Focus();
             }
 
             if (message != "")
-            { 
+            {
                 valid = false;
                 MessageBox.Show(message);
-            
+
             }
             return valid;
         }
@@ -62,17 +62,17 @@ namespace WindformsExample
         private void Uppercase()
         {
             if (UpperCaseRadioButton.Checked)
-            { 
+            {
                 NameTextBox.Text = NameTextBox.Text.ToUpper();
-            
+
             }
         }
 
-        private void Reverse() 
+        private void Reverse()
         {
             if (ReverseCaseRadioButton.Checked)
-            { 
-                NameTextBox.Text = new string (NameTextBox.Text.Reverse().ToArray());
+            {
+                NameTextBox.Text = new string(NameTextBox.Text.Reverse().ToArray());
             }
         }
 
@@ -89,8 +89,8 @@ namespace WindformsExample
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-            if (ValidateFields());
-            { 
+            if (ValidateFields()) ;
+            {
                 //this.Text = NameTextBox.Text;
                 Uppercase();
                 Reverse();
@@ -148,6 +148,11 @@ namespace WindformsExample
                 AgeTextBox.BackColor = Color.LightYellow;
                 SubmitButton.Enabled = false;
             }
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
