@@ -49,8 +49,13 @@
             ReverseCaseRadioButton = new RadioButton();
             ToolTip = new ToolTip(components);
             DisplayLabel = new Label();
+            menuStrip1 = new MenuStrip();
+            FileTopMenuStrip = new ToolStripMenuItem();
+            HelpStripMenu = new ToolStripMenuItem();
+            AboutStripMenu = new ToolStripMenuItem();
             ButtonGroupBox.SuspendLayout();
             UserInfoGroupBox.SuspendLayout();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // SubmitButton
@@ -178,7 +183,7 @@
             UserInfoGroupBox.Controls.Add(CityLabel);
             UserInfoGroupBox.Controls.Add(AgeLabel);
             UserInfoGroupBox.Controls.Add(CityTextBox);
-            UserInfoGroupBox.Location = new Point(12, 31);
+            UserInfoGroupBox.Location = new Point(12, 57);
             UserInfoGroupBox.Name = "UserInfoGroupBox";
             UserInfoGroupBox.Size = new Size(372, 172);
             UserInfoGroupBox.TabIndex = 0;
@@ -188,7 +193,7 @@
             // checkBox3
             // 
             checkBox3.AutoSize = true;
-            checkBox3.Location = new Point(220, 256);
+            checkBox3.Location = new Point(220, 299);
             checkBox3.Name = "checkBox3";
             checkBox3.Size = new Size(101, 24);
             checkBox3.TabIndex = 12;
@@ -198,7 +203,7 @@
             // checkBox4
             // 
             checkBox4.AutoSize = true;
-            checkBox4.Location = new Point(220, 223);
+            checkBox4.Location = new Point(220, 266);
             checkBox4.Name = "checkBox4";
             checkBox4.Size = new Size(101, 24);
             checkBox4.TabIndex = 1;
@@ -208,7 +213,7 @@
             // UpperCaseRadioButton
             // 
             UpperCaseRadioButton.AutoSize = true;
-            UpperCaseRadioButton.Location = new Point(85, 216);
+            UpperCaseRadioButton.Location = new Point(85, 259);
             UpperCaseRadioButton.Name = "UpperCaseRadioButton";
             UpperCaseRadioButton.Size = new Size(71, 24);
             UpperCaseRadioButton.TabIndex = 0;
@@ -220,7 +225,7 @@
             // LowerCaseRadioButton
             // 
             LowerCaseRadioButton.AutoSize = true;
-            LowerCaseRadioButton.Location = new Point(85, 243);
+            LowerCaseRadioButton.Location = new Point(85, 286);
             LowerCaseRadioButton.Name = "LowerCaseRadioButton";
             LowerCaseRadioButton.Size = new Size(70, 24);
             LowerCaseRadioButton.TabIndex = 24;
@@ -231,7 +236,7 @@
             // ReverseCaseRadioButton
             // 
             ReverseCaseRadioButton.AutoSize = true;
-            ReverseCaseRadioButton.Location = new Point(85, 273);
+            ReverseCaseRadioButton.Location = new Point(85, 316);
             ReverseCaseRadioButton.Name = "ReverseCaseRadioButton";
             ReverseCaseRadioButton.Size = new Size(81, 24);
             ReverseCaseRadioButton.TabIndex = 23;
@@ -243,11 +248,41 @@
             // 
             DisplayLabel.BackColor = Color.Gainsboro;
             DisplayLabel.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            DisplayLabel.Location = new Point(424, 31);
+            DisplayLabel.Location = new Point(422, 57);
             DisplayLabel.Name = "DisplayLabel";
             DisplayLabel.Size = new Size(279, 172);
             DisplayLabel.TabIndex = 25;
             DisplayLabel.Click += label1_Click_1;
+            // 
+            // menuStrip1
+            // 
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { FileTopMenuStrip, HelpStripMenu });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(800, 28);
+            menuStrip1.TabIndex = 26;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // FileTopMenuStrip
+            // 
+            FileTopMenuStrip.Name = "FileTopMenuStrip";
+            FileTopMenuStrip.Size = new Size(46, 24);
+            FileTopMenuStrip.Text = "File";
+            FileTopMenuStrip.Click += toolStripMenuItem1_Click;
+            // 
+            // HelpStripMenu
+            // 
+            HelpStripMenu.DropDownItems.AddRange(new ToolStripItem[] { AboutStripMenu });
+            HelpStripMenu.Name = "HelpStripMenu";
+            HelpStripMenu.Size = new Size(55, 24);
+            HelpStripMenu.Text = "Help";
+            // 
+            // AboutStripMenu
+            // 
+            AboutStripMenu.Name = "AboutStripMenu";
+            AboutStripMenu.Size = new Size(224, 26);
+            AboutStripMenu.Text = "About";
             // 
             // WinformExampleForm
             // 
@@ -264,6 +299,8 @@
             Controls.Add(checkBox4);
             Controls.Add(UserInfoGroupBox);
             Controls.Add(ButtonGroupBox);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
             Name = "WinformExampleForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Example Form";
@@ -272,6 +309,8 @@
             ButtonGroupBox.ResumeLayout(false);
             UserInfoGroupBox.ResumeLayout(false);
             UserInfoGroupBox.PerformLayout();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -298,5 +337,9 @@
         private RadioButton ReverseCaseRadioButton;
         private ToolTip ToolTip;
         private Label DisplayLabel;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem FileTopMenuStrip;
+        private ToolStripMenuItem HelpStripMenu;
+        private ToolStripMenuItem AboutStripMenu;
     }
 }

@@ -66,7 +66,7 @@ namespace WindformsExample
             {
                 return toUpper.ToUpper();
             }
-            else 
+            else
             {
                 return toUpper;
             }
@@ -90,8 +90,8 @@ namespace WindformsExample
             {
                 return new string(reverseThis.Reverse().ToArray());
             }
-            else 
-            { 
+            else
+            {
                 return reverseThis;
             }
         }
@@ -114,7 +114,7 @@ namespace WindformsExample
                 //this.Text = NameTextBox.Text;
                 //Uppercase();
                 //Reverse();
-                DisplayLabel.Text = LowerCase(Reverse(Uppercase( NameTextBox.Text +
+                DisplayLabel.Text = LowerCase(Reverse(Uppercase(NameTextBox.Text +
                     "\n" + AgeTextBox.Text +
                     "\n" + CityTextBox.Text +
                     "\n" + PhoneTextBox.Text)));
@@ -175,6 +175,11 @@ namespace WindformsExample
         }
 
         private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
         }
