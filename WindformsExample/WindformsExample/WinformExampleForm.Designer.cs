@@ -53,6 +53,9 @@
             FileTopMenuStrip = new ToolStripMenuItem();
             HelpStripMenu = new ToolStripMenuItem();
             AboutStripMenu = new ToolStripMenuItem();
+            SubmitTopMenuItem = new ToolStripMenuItem();
+            ClearTopMenuItem = new ToolStripMenuItem();
+            ExitTopMenuItem = new ToolStripMenuItem();
             ButtonGroupBox.SuspendLayout();
             UserInfoGroupBox.SuspendLayout();
             menuStrip1.SuspendLayout();
@@ -266,6 +269,7 @@
             // 
             // FileTopMenuStrip
             // 
+            FileTopMenuStrip.DropDownItems.AddRange(new ToolStripItem[] { SubmitTopMenuItem, ClearTopMenuItem, ExitTopMenuItem });
             FileTopMenuStrip.Name = "FileTopMenuStrip";
             FileTopMenuStrip.Size = new Size(46, 24);
             FileTopMenuStrip.Text = "File";
@@ -281,8 +285,26 @@
             // AboutStripMenu
             // 
             AboutStripMenu.Name = "AboutStripMenu";
-            AboutStripMenu.Size = new Size(224, 26);
+            AboutStripMenu.Size = new Size(133, 26);
             AboutStripMenu.Text = "About";
+            // 
+            // SubmitTopMenuItem
+            // 
+            SubmitTopMenuItem.Name = "SubmitTopMenuItem";
+            SubmitTopMenuItem.Size = new Size(224, 26);
+            SubmitTopMenuItem.Text = "Submit";
+            // 
+            // ClearTopMenuItem
+            // 
+            ClearTopMenuItem.Name = "ClearTopMenuItem";
+            ClearTopMenuItem.Size = new Size(224, 26);
+            ClearTopMenuItem.Text = "Clear";
+            // 
+            // ExitTopMenuItem
+            // 
+            ExitTopMenuItem.Name = "ExitTopMenuItem";
+            ExitTopMenuItem.Size = new Size(224, 26);
+            ExitTopMenuItem.Text = "Exit";
             // 
             // WinformExampleForm
             // 
@@ -341,5 +363,8 @@
         private ToolStripMenuItem FileTopMenuStrip;
         private ToolStripMenuItem HelpStripMenu;
         private ToolStripMenuItem AboutStripMenu;
+        private ToolStripMenuItem SubmitTopMenuItem;
+        private ToolStripMenuItem ClearTopMenuItem;
+        private ToolStripMenuItem ExitTopMenuItem;
     }
 }
