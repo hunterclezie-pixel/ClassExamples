@@ -15,11 +15,14 @@ namespace WindformsExample
             AgeTextBox.Text = "";
             AgeTextBox.BackColor = Color.LightYellow;
             CityTextBox.Text = "";
+            CityTextBox.BackColor = Color.LightYellow;
             PhoneTextBox.Text = "";
+            PhoneTextBox.BackColor = Color.LightYellow;
             DisplayLabel.Text = "";
 
             UpperCaseRadioButton.Checked = true;
             SubmitButton.Enabled = false;
+            SubmitTopMenuItem.Enabled = false;
         }
 
         private bool ValidateFields()
@@ -131,11 +134,6 @@ namespace WindformsExample
 
         }
 
-        private void PhoneTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -174,6 +172,34 @@ namespace WindformsExample
             }
         }
 
+        private void CityTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (CityTextBox.Text != "")
+            {
+                CityTextBox.BackColor = Color.White;
+                SubmitButton.Enabled = true;
+            }
+            else
+            {
+                CityTextBox.BackColor = Color.LightYellow;
+                SubmitButton.Enabled = false;
+            }
+        }
+
+        private void PhoneTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (PhoneTextBox.Text != "")
+            {
+                PhoneTextBox.BackColor = Color.White;
+                SubmitButton.Enabled = true;
+            }
+            else
+            {
+                PhoneTextBox.BackColor = Color.LightYellow;
+                SubmitButton.Enabled = false;
+            }
+        }
+
         private void label1_Click_1(object sender, EventArgs e)
         {
 
@@ -182,6 +208,11 @@ namespace WindformsExample
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void AboutStripMenu_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("No help available.");
         }
     }
 }
