@@ -214,5 +214,20 @@ namespace WindformsExample
         {
             Console.WriteLine("No help available.");
         }
+
+        private void UpperContextMenuItem_Click(object sender, EventArgs e)
+        {
+            UpperCaseRadioButton.Checked = true;
+        }
+
+        private void LowerContextMenuItem_Click(object sender, EventArgs e)
+        {
+            LowerCaseRadioButton.Checked = true;
+        }
+
+        private void ReverseContextMenuItem_Click(object sender, EventArgs e)
+        {
+            ReverseCaseRadioButton.Checked = true;
+        }
     }
 }
