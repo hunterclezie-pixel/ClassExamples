@@ -32,15 +32,15 @@
             ClearButton = new Button();
             SubmitButton = new Button();
             InfoGroupBox = new GroupBox();
-            FirstNameTextBox = new TextBox();
-            LastNameTextBox = new TextBox();
-            CompanyTextBox = new TextBox();
-            FirstNameLabel = new Label();
-            LastNameLabel = new Label();
             CompanyLabel = new Label();
+            LastNameLabel = new Label();
+            FirstNameLabel = new Label();
+            CompanyTextBox = new TextBox();
+            LastNameTextBox = new TextBox();
+            FirstNameTextBox = new TextBox();
             OutputGroupBox = new GroupBox();
-            comboBox1 = new ComboBox();
             listBox1 = new ListBox();
+            comboBox1 = new ComboBox();
             InfoGroupBox.SuspendLayout();
             OutputGroupBox.SuspendLayout();
             SuspendLayout();
@@ -87,35 +87,14 @@
             InfoGroupBox.TabIndex = 3;
             InfoGroupBox.TabStop = false;
             // 
-            // FirstNameTextBox
+            // CompanyLabel
             // 
-            FirstNameTextBox.Location = new Point(88, 41);
-            FirstNameTextBox.Name = "FirstNameTextBox";
-            FirstNameTextBox.Size = new Size(184, 27);
-            FirstNameTextBox.TabIndex = 0;
-            // 
-            // LastNameTextBox
-            // 
-            LastNameTextBox.Location = new Point(88, 74);
-            LastNameTextBox.Name = "LastNameTextBox";
-            LastNameTextBox.Size = new Size(184, 27);
-            LastNameTextBox.TabIndex = 1;
-            // 
-            // CompanyTextBox
-            // 
-            CompanyTextBox.Location = new Point(88, 107);
-            CompanyTextBox.Name = "CompanyTextBox";
-            CompanyTextBox.Size = new Size(184, 27);
-            CompanyTextBox.TabIndex = 2;
-            // 
-            // FirstNameLabel
-            // 
-            FirstNameLabel.AutoSize = true;
-            FirstNameLabel.Location = new Point(47, 44);
-            FirstNameLabel.Name = "FirstNameLabel";
-            FirstNameLabel.Size = new Size(36, 20);
-            FirstNameLabel.TabIndex = 3;
-            FirstNameLabel.Text = "First";
+            CompanyLabel.AutoSize = true;
+            CompanyLabel.Location = new Point(10, 110);
+            CompanyLabel.Name = "CompanyLabel";
+            CompanyLabel.Size = new Size(72, 20);
+            CompanyLabel.TabIndex = 5;
+            CompanyLabel.Text = "Company";
             // 
             // LastNameLabel
             // 
@@ -126,14 +105,35 @@
             LastNameLabel.TabIndex = 4;
             LastNameLabel.Text = "Last";
             // 
-            // CompanyLabel
+            // FirstNameLabel
             // 
-            CompanyLabel.AutoSize = true;
-            CompanyLabel.Location = new Point(10, 110);
-            CompanyLabel.Name = "CompanyLabel";
-            CompanyLabel.Size = new Size(72, 20);
-            CompanyLabel.TabIndex = 5;
-            CompanyLabel.Text = "Company";
+            FirstNameLabel.AutoSize = true;
+            FirstNameLabel.Location = new Point(47, 44);
+            FirstNameLabel.Name = "FirstNameLabel";
+            FirstNameLabel.Size = new Size(36, 20);
+            FirstNameLabel.TabIndex = 3;
+            FirstNameLabel.Text = "First";
+            // 
+            // CompanyTextBox
+            // 
+            CompanyTextBox.Location = new Point(88, 107);
+            CompanyTextBox.Name = "CompanyTextBox";
+            CompanyTextBox.Size = new Size(184, 27);
+            CompanyTextBox.TabIndex = 2;
+            // 
+            // LastNameTextBox
+            // 
+            LastNameTextBox.Location = new Point(88, 74);
+            LastNameTextBox.Name = "LastNameTextBox";
+            LastNameTextBox.Size = new Size(184, 27);
+            LastNameTextBox.TabIndex = 1;
+            // 
+            // FirstNameTextBox
+            // 
+            FirstNameTextBox.Location = new Point(88, 41);
+            FirstNameTextBox.Name = "FirstNameTextBox";
+            FirstNameTextBox.Size = new Size(184, 27);
+            FirstNameTextBox.TabIndex = 0;
             // 
             // OutputGroupBox
             // 
@@ -145,14 +145,6 @@
             OutputGroupBox.TabIndex = 4;
             OutputGroupBox.TabStop = false;
             // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(27, 46);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 28);
-            comboBox1.TabIndex = 0;
-            // 
             // listBox1
             // 
             listBox1.FormattingEnabled = true;
@@ -160,6 +152,14 @@
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(378, 224);
             listBox1.TabIndex = 1;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(27, 46);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(151, 28);
+            comboBox1.TabIndex = 0;
             // 
             // ListExampleForm
             // 
@@ -172,7 +172,7 @@
             Controls.Add(ClearButton);
             Controls.Add(ExitButton);
             Name = "ListExampleForm";
-            Text = "Form1";
+            Text = "ListExample";
             InfoGroupBox.ResumeLayout(false);
             InfoGroupBox.PerformLayout();
             OutputGroupBox.ResumeLayout(false);
