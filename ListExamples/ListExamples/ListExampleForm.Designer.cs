@@ -63,6 +63,7 @@
             ClearButton.TabIndex = 1;
             ClearButton.Text = "Clear";
             ClearButton.UseVisualStyleBackColor = true;
+            ClearButton.Click += ClearButton_Click;
             // 
             // SubmitButton
             // 
@@ -72,6 +73,7 @@
             SubmitButton.TabIndex = 2;
             SubmitButton.Text = "Submit";
             SubmitButton.UseVisualStyleBackColor = true;
+            SubmitButton.Click += SubmitButton_Click;
             // 
             // InfoGroupBox
             // 
@@ -99,7 +101,7 @@
             // LastNameLabel
             // 
             LastNameLabel.AutoSize = true;
-            LastNameLabel.Location = new Point(47, 77);
+            LastNameLabel.Location = new Point(10, 77);
             LastNameLabel.Name = "LastNameLabel";
             LastNameLabel.Size = new Size(35, 20);
             LastNameLabel.TabIndex = 4;
@@ -108,7 +110,7 @@
             // FirstNameLabel
             // 
             FirstNameLabel.AutoSize = true;
-            FirstNameLabel.Location = new Point(47, 44);
+            FirstNameLabel.Location = new Point(10, 44);
             FirstNameLabel.Name = "FirstNameLabel";
             FirstNameLabel.Size = new Size(36, 20);
             FirstNameLabel.TabIndex = 3;
@@ -156,7 +158,7 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(27, 46);
+            comboBox1.Location = new Point(6, 48);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(151, 28);
             comboBox1.TabIndex = 0;
