@@ -6,5 +6,12 @@ namespace ListExamples
         {
             InitializeComponent();
         }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            // Close the application
+            this.Close();
+        }
     }
 }
+
