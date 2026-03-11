@@ -26,6 +26,16 @@ namespace ListExamples
             DisplayListBox.Items.Add($"{LastNameTextBox.Text},{FirstNameTextBox.Text} {CompanyTextBox.Text}");
         }
 
+        void AddItemToComboBox()
+        {
+            SelectionComboBox.Items.Add($"{LastNameTextBox.Text},{FirstNameTextBox.Text}");
+            if (SelectionComboBox.Items.Count > 0)
+            { 
+                SelectionComboBox.SelectedIndex = 0;
+                //SelectionComboBox.SelectedIndex = -1;
+            }
+        }
+
         //Event Handlers below here --------------------------------------------------------------
 
         private void ExitButton_Click(object sender, EventArgs e)
@@ -43,6 +53,7 @@ namespace ListExamples
         {
             //ListExampleMethod();
             AddItemToListBox();
+            AddItemToComboBox();
         }
 
         private void DisplayListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -51,12 +62,18 @@ namespace ListExamples
             string[] temp = DisplayListBox.SelectedItem.ToString().Split(" ");
             CompanyTextBox.Text = temp[1];
             //isolate first and last name
-            temp = temp[0].Split(",");  
+            temp = temp[0].Split(",");
             FirstNameTextBox.Text = temp[1];
             LastNameLabel.Text = temp[0];
 
             //this.Text = DisplayListBox.SelectedIndex.ToString();
             //FirstNameTextBox.Text = DisplayListBox.SelectedItem.ToString();
+        }
+
+        private void SelectionComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //select the corosponding entry in the list box
+            DisplayListBox.SelectedIndex = SelectionComboBox.SelectedIndex;
         }
     }
 }
