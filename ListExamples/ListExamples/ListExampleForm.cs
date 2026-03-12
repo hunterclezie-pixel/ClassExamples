@@ -5,6 +5,7 @@ namespace ListExamples
         public ListExampleForm()
         {
             InitializeComponent();
+            SetDefaults();
         }
 
         //Custom Methids below here --------------------------------------------------------------
@@ -21,6 +22,41 @@ namespace ListExamples
             this.Text = names.Count.ToString();
         }
 
+        void SetDefaults()
+        {
+            //clear all text boxes and list box
+            LastNameTextBox.Text = "";
+            FirstNameTextBox.Text = "";
+            CompanyTextBox.Text = "";
+            SelectionComboBox.Text = "";
+            DisplayListBox.Text = "";
+
+            //set the background color of the text boxes to light yellow
+            LastNameTextBox.BackColor = Color.LightYellow;
+            FirstNameTextBox.BackColor = Color.LightYellow;
+            CompanyTextBox.BackColor = Color.LightYellow;
+
+            SubmitButton.Enabled = false;
+        }
+
+        void ValidateFields()
+        {
+            {
+                bool valid = true;
+                string message = "";
+
+                if (CompanyTextBox.Text != "" && LastNameTextBox.Text != "" && FirstNameTextBox.Text != "")
+                {
+                    SubmitButton.Enabled = true;
+                }
+
+                else
+                {
+                    SubmitButton.Enabled = false;
+                }
+            }
+        }
+
         void AddItemToListBox()
         {
             DisplayListBox.Items.Add($"{LastNameTextBox.Text},{FirstNameTextBox.Text} {CompanyTextBox.Text}");
@@ -30,7 +66,7 @@ namespace ListExamples
         {
             SelectionComboBox.Items.Add($"{LastNameTextBox.Text},{FirstNameTextBox.Text}");
             if (SelectionComboBox.Items.Count > 0)
-            { 
+            {
                 SelectionComboBox.SelectedIndex = 0;
                 //SelectionComboBox.SelectedIndex = -1;
             }
@@ -46,7 +82,7 @@ namespace ListExamples
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
-
+            SetDefaults();
         }
 
         private void SubmitButton_Click(object sender, EventArgs e)
@@ -74,6 +110,45 @@ namespace ListExamples
         {
             //select the corosponding entry in the list box
             DisplayListBox.SelectedIndex = SelectionComboBox.SelectedIndex;
+        }
+
+        void FirstNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (FirstNameTextBox.Text != "")
+            {
+                FirstNameTextBox.BackColor = Color.White;
+            }
+            else
+            {
+                FirstNameTextBox.BackColor = Color.LightYellow;
+            }
+            ValidateFields();
+        }
+
+        void LastNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (LastNameTextBox.Text != "")
+            {
+                LastNameTextBox.BackColor = Color.White;
+            }
+            else
+            {
+                LastNameTextBox.BackColor = Color.LightYellow;
+            }
+            ValidateFields();
+        }
+
+        void CompanyTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (CompanyTextBox.Text != "")
+            {
+                CompanyTextBox.BackColor = Color.White;
+            }
+            else
+            {
+                CompanyTextBox.BackColor = Color.LightYellow;
+            }
+            ValidateFields();
         }
     }
 }
