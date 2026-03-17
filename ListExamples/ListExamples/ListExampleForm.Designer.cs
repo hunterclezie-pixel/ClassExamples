@@ -152,6 +152,7 @@
             // 
             // DisplayListBox
             // 
+            DisplayListBox.Font = new Font("Cascadia Mono", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             DisplayListBox.FormattingEnabled = true;
             DisplayListBox.Location = new Point(6, 109);
             DisplayListBox.Name = "DisplayListBox";

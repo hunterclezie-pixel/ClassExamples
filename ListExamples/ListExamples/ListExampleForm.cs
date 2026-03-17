@@ -100,7 +100,7 @@ namespace ListExamples
             //isolate first and last name
             temp = temp[0].Split(",");
             FirstNameTextBox.Text = temp[1];
-            LastNameLabel.Text = temp[0];
+            LastNameTextBox.Text = temp[0];
 
             //this.Text = DisplayListBox.SelectedIndex.ToString();
             //FirstNameTextBox.Text = DisplayListBox.SelectedItem.ToString();
