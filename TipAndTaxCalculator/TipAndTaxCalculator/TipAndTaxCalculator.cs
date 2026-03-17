@@ -6,6 +6,14 @@ namespace TipAndTaxCalculator
         {
             InitializeComponent();
         }
+        /*
+        [] Set Defaults
+        [] Tip Amount after discount exlude tax
+        [] Calculate state tax amount after discount exlude tip
+        [] Claculate discounts amounts / total discount
+        [] diplay original, discounts, tip, tax, amount due formatted as currency
+        */
+
         //custom networks -----------------------------------------------------------
 
 
@@ -14,6 +22,16 @@ namespace TipAndTaxCalculator
         private void ExitButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CalculateButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
