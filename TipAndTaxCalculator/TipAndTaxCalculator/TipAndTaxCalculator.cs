@@ -19,6 +19,11 @@ namespace TipAndTaxCalculator
         void SetDefaults()
         {
             DollarAmountTextBox.Text = "";
+            Tip15RadioButton.Checked = true;
+            TipCustomTextBox.Text = "";
+            TipCustomTextBox.Enabled = false;
+            DiscountAAACheckBox.Checked = false;
+            DiscountDCCheckBox.Checked = false;
         }
 
         //Event handlers below here -------------------------------------------------
