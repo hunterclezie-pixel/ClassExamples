@@ -36,7 +36,7 @@
             ExitButton = new Button();
             DiscountAAACheckBox = new CheckBox();
             DiscountDCCheckBox = new CheckBox();
-            textBox1 = new TextBox();
+            DollarAmountTextBox = new TextBox();
             AmountLabel = new Label();
             DisplayLabel = new Label();
             TipLabel = new Label();
@@ -128,12 +128,12 @@
             DiscountDCCheckBox.Text = "Diner's Card";
             DiscountDCCheckBox.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // DollarAmountTextBox
             // 
-            textBox1.Location = new Point(157, 51);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 8;
+            DollarAmountTextBox.Location = new Point(157, 51);
+            DollarAmountTextBox.Name = "DollarAmountTextBox";
+            DollarAmountTextBox.Size = new Size(125, 27);
+            DollarAmountTextBox.TabIndex = 8;
             // 
             // AmountLabel
             // 
@@ -201,7 +201,7 @@
             Controls.Add(TipLabel);
             Controls.Add(DisplayLabel);
             Controls.Add(AmountLabel);
-            Controls.Add(textBox1);
+            Controls.Add(DollarAmountTextBox);
             Controls.Add(DiscountDCCheckBox);
             Controls.Add(DiscountAAACheckBox);
             Controls.Add(ExitButton);
@@ -227,7 +227,7 @@
         private Button ExitButton;
         private CheckBox DiscountAAACheckBox;
         private CheckBox DiscountDCCheckBox;
-        private TextBox textBox1;
+        private TextBox DollarAmountTextBox;
         private Label AmountLabel;
         private Label DisplayLabel;
         private Label TipLabel;
