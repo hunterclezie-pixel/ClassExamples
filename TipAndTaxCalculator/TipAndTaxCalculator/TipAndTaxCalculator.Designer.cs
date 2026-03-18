@@ -31,7 +31,7 @@
             CalculateButton = new Button();
             ClearButton = new Button();
             Tip15RadioButton = new RadioButton();
-            Tip10RadioButton = new RadioButton();
+            Tip18RadioButton = new RadioButton();
             Tip20RadioButton = new RadioButton();
             ExitButton = new Button();
             DiscountAAACheckBox = new CheckBox();
@@ -76,16 +76,16 @@
             Tip15RadioButton.Text = "15%";
             Tip15RadioButton.UseVisualStyleBackColor = true;
             // 
-            // Tip10RadioButton
+            // Tip18RadioButton
             // 
-            Tip10RadioButton.AutoSize = true;
-            Tip10RadioButton.Location = new Point(157, 117);
-            Tip10RadioButton.Name = "Tip10RadioButton";
-            Tip10RadioButton.Size = new Size(58, 24);
-            Tip10RadioButton.TabIndex = 3;
-            Tip10RadioButton.TabStop = true;
-            Tip10RadioButton.Text = "10%";
-            Tip10RadioButton.UseVisualStyleBackColor = true;
+            Tip18RadioButton.AutoSize = true;
+            Tip18RadioButton.Location = new Point(157, 117);
+            Tip18RadioButton.Name = "Tip18RadioButton";
+            Tip18RadioButton.Size = new Size(58, 24);
+            Tip18RadioButton.TabIndex = 3;
+            Tip18RadioButton.TabStop = true;
+            Tip18RadioButton.Text = "18%";
+            Tip18RadioButton.UseVisualStyleBackColor = true;
             // 
             // Tip20RadioButton
             // 
@@ -206,7 +206,7 @@
             Controls.Add(DiscountAAACheckBox);
             Controls.Add(ExitButton);
             Controls.Add(Tip20RadioButton);
-            Controls.Add(Tip10RadioButton);
+            Controls.Add(Tip18RadioButton);
             Controls.Add(Tip15RadioButton);
             Controls.Add(ClearButton);
             Controls.Add(CalculateButton);
@@ -222,7 +222,7 @@
         private Button CalculateButton;
         private Button ClearButton;
         private RadioButton Tip15RadioButton;
-        private RadioButton Tip10RadioButton;
+        private RadioButton Tip18RadioButton;
         private RadioButton Tip20RadioButton;
         private Button ExitButton;
         private CheckBox DiscountAAACheckBox;
