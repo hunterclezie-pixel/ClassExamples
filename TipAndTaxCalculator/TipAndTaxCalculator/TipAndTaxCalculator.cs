@@ -34,6 +34,22 @@ namespace TipAndTaxCalculator
             DollarAmountTextBox.Select();
         }
 
+        bool AllFieldsValid()
+        {
+            bool _valid = true;
+            try
+            {
+                decimal.Parse(DollarAmountTextBox.Text);
+                DollarAmountTextBox.BackColor = Color.White;
+            }
+            catch (Exception) 
+            { 
+                DollarAmountTextBox.BackColor = Color.LightYellow;
+                _valid = false;
+            }
+            return true;
+        }
+
         /// <summary>
         /// Calculates the tip amount based on the specified subtotal and the selected tip percentage option.
         /// </summary>
