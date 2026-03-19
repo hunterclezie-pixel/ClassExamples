@@ -39,6 +39,7 @@ namespace TipAndTaxCalculator
         bool AllFieldsValid()
         {
             bool _valid = true;
+            //This checks if the text in the DollarAmountTextBox can be parsed as a decimal.
             try
             {
                 decimal.Parse(DollarAmountTextBox.Text);
@@ -49,7 +50,49 @@ namespace TipAndTaxCalculator
                 DollarAmountTextBox.BackColor = Color.LightYellow;
                 _valid = false;
             }
+
+            // This checks if the text in the TipCustomTextBox can be parsed as a decimal.
+            try
+            {
+                decimal.Parse(TipCustomTextBox.Text);
+                TipCustomTextBox.BackColor = Color.White;
+            }
+            catch (Exception)
+            {
+                TipCustomTextBox.BackColor = Color.LightYellow;
+                _valid = false;
+            }
             return true;
+        }
+
+        /// <summary>
+        /// Calculates the AAA discount amount based on the specified total.
+        /// </summary>
+        /// <param name="thisAmount">The total amount to which the AAA discount will be applied. Must be a non-negative value.</param>
+        /// <returns>A decimal value representing 3 percent of the specified amount. Returns 0 if the input is 0.</returns>
+        decimal CalculateAAADiscount(decimal thisAmount)
+        {
+            return thisAmount * 0.03m;
+        }
+
+        /// <summary>
+        /// Calculates the discount amount for a Diner Card transaction based on the specified purchase amount.
+        /// </summary>
+        /// <param name="thisAmount">The total purchase amount to which the Diner Card discount will be applied. Must be a non-negative value.</param>
+        /// <returns>The calculated discount amount, equal to 5% of the specified purchase amount.</returns>
+        decimal CalculateDinerCardDiscount(decimal thisAmount)
+        {
+            return thisAmount * 0.05m;
+        }
+
+        /// <summary>
+        /// Calculates the tax amount for a specified monetary value using a fixed tax rate of 6%.
+        /// </summary>
+        /// <param name="thisAmount">The monetary value on which tax is to be calculated. Must be a non-negative decimal.</param>
+        /// <returns>The calculated tax amount as a decimal. Returns 0 if the input value is 0.</returns>
+        decimal CalculateTaxOn(decimal thisAmount)
+        {
+            return thisAmount * 0.06m;
         }
 
         /// <summary>
@@ -61,7 +104,7 @@ namespace TipAndTaxCalculator
         /// <param name="thisAmount">The subtotal amount for which the tip is to be calculated. Must be a non-negative value.</param>
         /// <returns>A decimal value representing the calculated tip amount. The value depends on the selected tip percentage
         /// option.</returns>
-        decimal CalculateTip(decimal thisAmount)
+        decimal CalculateTip(decimal thisAmount , decimal customTip = 0)
         {
             decimal subTotal = 0;
             switch (true)
@@ -76,7 +119,7 @@ namespace TipAndTaxCalculator
                     subTotal = thisAmount * 0.20m;
                     break;
                 case bool when TipCustomRadioButton.Checked:
-                    //TODO
+                    subTotal = customTip;
                     break;
                 default:
                     MessageBox.Show("Don't come by my house, don't even talk to me, we're done...");
@@ -98,7 +141,10 @@ namespace TipAndTaxCalculator
 
         private void CalculateButton_Click(object sender, EventArgs e)
         {
-
+            if (AllFieldsValid())
+            {
+                //calculate stuff
+            }
         }
 
         private void DollarAmountTextBox_TextChanged(object sender, EventArgs e)
