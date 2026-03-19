@@ -5,6 +5,7 @@ namespace TipAndTaxCalculator
         public TipAndTaxCalculator()
         {
             InitializeComponent();
+            SetDefaults();
         }
         /*
         [x] Set Defaults
@@ -30,8 +31,9 @@ namespace TipAndTaxCalculator
             TipCustomTextBox.Enabled = false;
             DiscountAAACheckBox.Checked = false;
             DiscountDCCheckBox.Checked = false;
-            DisplayLabel.Text = ""; 
+            DisplayLabel.Text = "";
             DollarAmountTextBox.Select();
+            DollarAmountTextBox.BackColor = Color.LightYellow;
         }
 
         bool AllFieldsValid()
@@ -42,8 +44,8 @@ namespace TipAndTaxCalculator
                 decimal.Parse(DollarAmountTextBox.Text);
                 DollarAmountTextBox.BackColor = Color.White;
             }
-            catch (Exception) 
-            { 
+            catch (Exception)
+            {
                 DollarAmountTextBox.BackColor = Color.LightYellow;
                 _valid = false;
             }
@@ -63,7 +65,7 @@ namespace TipAndTaxCalculator
         {
             decimal subTotal = 0;
             switch (true)
-            { 
+            {
                 case bool when Tip15RadioButton.Checked:
                     subTotal = thisAmount * 0.15m;
                     break;
@@ -91,12 +93,30 @@ namespace TipAndTaxCalculator
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
-
+            SetDefaults();
         }
 
         private void CalculateButton_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void DollarAmountTextBox_TextChanged(object sender, EventArgs e)
+        {
+            AllFieldsValid();
+        }
+
+        private void TipCustomRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (TipCustomRadioButton.Checked)
+            { 
+                TipCustomTextBox.Enabled = true;
+            }
+            else             
+            {
+                TipCustomTextBox.Enabled = false;
+                TipCustomTextBox.Text = "";
+            }
         }
     }
 }
