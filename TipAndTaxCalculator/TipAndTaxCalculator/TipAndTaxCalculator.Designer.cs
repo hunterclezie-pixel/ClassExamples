@@ -147,12 +147,11 @@
             // 
             // DisplayLabel
             // 
-            DisplayLabel.AutoSize = true;
-            DisplayLabel.Location = new Point(468, 58);
+            DisplayLabel.Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DisplayLabel.Location = new Point(389, 51);
             DisplayLabel.Name = "DisplayLabel";
-            DisplayLabel.Size = new Size(50, 20);
+            DisplayLabel.Size = new Size(399, 285);
             DisplayLabel.TabIndex = 11;
-            DisplayLabel.Text = "label2";
             // 
             // TipLabel
             // 

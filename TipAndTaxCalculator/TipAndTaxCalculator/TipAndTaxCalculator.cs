@@ -27,7 +27,7 @@ namespace TipAndTaxCalculator
         {
             DollarAmountTextBox.Text = "";
             Tip15RadioButton.Checked = true;
-            TipCustomTextBox.Text = "";
+            TipCustomTextBox.Text = "0.00";
             TipCustomTextBox.Enabled = false;
             DiscountAAACheckBox.Checked = false;
             DiscountDCCheckBox.Checked = false;
@@ -125,7 +125,7 @@ namespace TipAndTaxCalculator
                     MessageBox.Show("Don't come by my house, don't even talk to me, we're done...");
                     break;
             }
-            return 0.00m;
+            return subTotal;
         }
 
         //Event handlers below here -------------------------------------------------
@@ -145,7 +145,8 @@ namespace TipAndTaxCalculator
             decimal totalDiscount = 0;
             decimal tax = 0;
             decimal tip = 0;
-            decimal amountTotal = 0;
+            decimal amountDue = 0;
+            int padding = 20;
             if (AllFieldsValid())
             {
                 originalAmount = decimal.Parse(DollarAmountTextBox.Text);
@@ -153,8 +154,14 @@ namespace TipAndTaxCalculator
                 totalDiscount += CalculateDinerCardDiscount(originalAmount);
                 tax = CalculateTaxOn(originalAmount - totalDiscount);
                 tip = CalculateTip(originalAmount - totalDiscount + tax);
-                amountTotal = originalAmount - totalDiscount + tax + tip;   
-
+                amountDue = originalAmount - totalDiscount + tax + tip;  
+                //Todo: refactor to papa luke
+                DisplayLabel.Text = $"Original Amount:".PadRight(padding) + $"{originalAmount.ToString("C")}\n" +
+                                    $"Total Discount:".PadRight(padding) + $"{totalDiscount.ToString("C")}\n" +
+                                    $"Sales Tax:".PadRight(padding) + $"{tax.ToString("C")}\n" +
+                                    $"Subtotal:".PadRight(padding) + $"{(originalAmount - totalDiscount + tax).ToString("C")}\n" +
+                                    $"Tip:".PadRight(padding) + $"{tip.ToString("C")}\n" +
+                                    $"Total:".PadRight(padding) + $"{amountDue.ToString("C")}";
             }
         }
 
