@@ -72,7 +72,12 @@ namespace TipAndTaxCalculator
         /// <returns>A decimal value representing 3 percent of the specified amount. Returns 0 if the input is 0.</returns>
         decimal CalculateAAADiscount(decimal thisAmount)
         {
-            return thisAmount * 0.03m;
+            decimal discount = 0;
+            if (DiscountAAACheckBox.Checked)
+            { 
+                discount = thisAmount * 0.03m;
+            }
+            return discount;
         }
 
         /// <summary>
@@ -82,7 +87,12 @@ namespace TipAndTaxCalculator
         /// <returns>The calculated discount amount, equal to 5% of the specified purchase amount.</returns>
         decimal CalculateDinerCardDiscount(decimal thisAmount)
         {
-            return thisAmount * 0.05m;
+            decimal discount = 0;
+            if (DiscountDCCheckBox.Checked)
+            {
+                discount = thisAmount * 0.05m;
+            }
+            return discount;
         }
 
         /// <summary>

@@ -147,7 +147,7 @@
             // 
             // DisplayLabel
             // 
-            DisplayLabel.Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DisplayLabel.Font = new Font("Consolas", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             DisplayLabel.Location = new Point(389, 51);
             DisplayLabel.Name = "DisplayLabel";
             DisplayLabel.Size = new Size(399, 285);
