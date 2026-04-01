@@ -43,6 +43,7 @@
             TipCustomRadioButton = new RadioButton();
             DiscountLabel = new Label();
             TipCustomTextBox = new TextBox();
+            TipCurrancyLabel = new Label();
             SuspendLayout();
             // 
             // CalculateButton
@@ -185,17 +186,27 @@
             // 
             // TipCustomTextBox
             // 
-            TipCustomTextBox.Location = new Point(243, 177);
+            TipCustomTextBox.Location = new Point(266, 178);
             TipCustomTextBox.Name = "TipCustomTextBox";
             TipCustomTextBox.Size = new Size(78, 27);
             TipCustomTextBox.TabIndex = 15;
             TipCustomTextBox.TabStop = false;
+            // 
+            // TipCurrancyLabel
+            // 
+            TipCurrancyLabel.AutoSize = true;
+            TipCurrancyLabel.Location = new Point(243, 181);
+            TipCurrancyLabel.Name = "TipCurrancyLabel";
+            TipCurrancyLabel.Size = new Size(17, 20);
+            TipCurrancyLabel.TabIndex = 16;
+            TipCurrancyLabel.Text = "$";
             // 
             // TipAndTaxCalculator
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(TipCurrancyLabel);
             Controls.Add(TipCustomTextBox);
             Controls.Add(DiscountLabel);
             Controls.Add(TipCustomRadioButton);
@@ -235,5 +246,6 @@
         private RadioButton TipCustomRadioButton;
         private Label DiscountLabel;
         private TextBox TipCustomTextBox;
+        private Label TipCurrancyLabel;
     }
 }

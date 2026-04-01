@@ -153,7 +153,7 @@ namespace TipAndTaxCalculator
                 totalDiscount += CalculateAAADiscount(originalAmount);
                 totalDiscount += CalculateDinerCardDiscount(originalAmount);
                 tax = CalculateTaxOn(originalAmount - totalDiscount);
-                tip = CalculateTip(originalAmount - totalDiscount + tax);
+                tip = CalculateTip(originalAmount - totalDiscount + tax, decimal.Parse(TipCustomTextBox.Text));
                 subTotal = (originalAmount - totalDiscount) + tax;
                 amountDue = originalAmount - totalDiscount + tax + tip;
 
