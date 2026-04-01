@@ -144,6 +144,7 @@ namespace TipAndTaxCalculator
             decimal totalDiscount = 0;
             decimal tax = 0;
             decimal tip = 0;
+            decimal subTotal = 0;
             decimal amountDue = 0;
             int padding = 20;
             if (AllFieldsValid())
@@ -153,12 +154,13 @@ namespace TipAndTaxCalculator
                 totalDiscount += CalculateDinerCardDiscount(originalAmount);
                 tax = CalculateTaxOn(originalAmount - totalDiscount);
                 tip = CalculateTip(originalAmount - totalDiscount + tax);
+                subTotal = (originalAmount - totalDiscount) + tax;
                 amountDue = originalAmount - totalDiscount + tax + tip;
 
                 DisplayLabel.Text = $"Original Amount:  {originalAmount:C}\n" +
                                     $"Total Discount:   {totalDiscount:C}\n" +
                                     $"Sales Tax:        {tax:C}\n" +
-                                    $"Subtotal:         {(originalAmount - totalDiscount + tax):C}\n" +
+                                    $"Subtotal:         {subTotal:C}\n" +
                                     $"Tip:              {tip:C}\n" +
                                     $"Total:            {amountDue:C}";
             }
