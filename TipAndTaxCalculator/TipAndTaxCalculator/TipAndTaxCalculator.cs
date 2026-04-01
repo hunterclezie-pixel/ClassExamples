@@ -128,18 +128,7 @@ namespace TipAndTaxCalculator
             return subTotal;
         }
 
-        //Event handlers below here -------------------------------------------------
-        private void ExitButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void ClearButton_Click(object sender, EventArgs e)
-        {
-            SetDefaults();
-        }
-
-        private void CalculateButton_Click(object sender, EventArgs e)
+        void DisplayTransaction()
         {
             decimal originalAmount = 0;
             decimal totalDiscount = 0;
@@ -154,15 +143,31 @@ namespace TipAndTaxCalculator
                 totalDiscount += CalculateDinerCardDiscount(originalAmount);
                 tax = CalculateTaxOn(originalAmount - totalDiscount);
                 tip = CalculateTip(originalAmount - totalDiscount + tax);
-                amountDue = originalAmount - totalDiscount + tax + tip;  
-                //Todo: refactor to papa luke
-                DisplayLabel.Text = $"Original Amount:".PadRight(padding) + $"{originalAmount.ToString("C")}\n" +
-                                    $"Total Discount:".PadRight(padding) + $"{totalDiscount.ToString("C")}\n" +
-                                    $"Sales Tax:".PadRight(padding) + $"{tax.ToString("C")}\n" +
-                                    $"Subtotal:".PadRight(padding) + $"{(originalAmount - totalDiscount + tax).ToString("C")}\n" +
-                                    $"Tip:".PadRight(padding) + $"{tip.ToString("C")}\n" +
-                                    $"Total:".PadRight(padding) + $"{amountDue.ToString("C")}";
+                amountDue = originalAmount - totalDiscount + tax + tip;
+
+                DisplayLabel.Text = $"Original Amount:  {originalAmount:C}\n" +
+                                    $"Total Discount:   {totalDiscount:C}\n" +
+                                    $"Sales Tax:        {tax:C}\n" +
+                                    $"Subtotal:         {(originalAmount - totalDiscount + tax):C}\n" +
+                                    $"Tip:              {tip:C}\n" +
+                                    $"Total:            {amountDue:C}";
             }
+        }
+
+        //Event handlers below here -------------------------------------------------
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            SetDefaults();
+        }
+
+        private void CalculateButton_Click(object sender, EventArgs e)
+        {
+            DisplayTransaction();
         }
 
         private void DollarAmountTextBox_TextChanged(object sender, EventArgs e)
