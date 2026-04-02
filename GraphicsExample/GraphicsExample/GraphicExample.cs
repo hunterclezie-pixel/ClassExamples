@@ -39,6 +39,12 @@ namespace GraphicsExample
             thePen.Dispose();
         }
 
+        //rectangle
+
+        //text
+
+        //image
+
         // Event handlers-------------------------------------------------------------------------
 
         private void ExitButton_Click(object sender, EventArgs e)
