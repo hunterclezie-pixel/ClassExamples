@@ -28,35 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            DisplayPictureBox = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)DisplayPictureBox).BeginInit();
             SuspendLayout();
             // 
-            // pictureBox1
+            // DisplayPictureBox
             // 
-            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pictureBox1.BackColor = SystemColors.ActiveCaption;
-            pictureBox1.Location = new Point(12, 12);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(998, 394);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            DisplayPictureBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            DisplayPictureBox.BackColor = SystemColors.ActiveCaption;
+            DisplayPictureBox.Location = new Point(12, 12);
+            DisplayPictureBox.Name = "DisplayPictureBox";
+            DisplayPictureBox.Size = new Size(998, 394);
+            DisplayPictureBox.TabIndex = 0;
+            DisplayPictureBox.TabStop = false;
             // 
             // GraphicExample
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1022, 513);
-            Controls.Add(pictureBox1);
+            Controls.Add(DisplayPictureBox);
             MinimumSize = new Size(500, 500);
             Name = "GraphicExample";
             Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DisplayPictureBox).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private PictureBox pictureBox1;
+        private PictureBox DisplayPictureBox;
     }
 }
