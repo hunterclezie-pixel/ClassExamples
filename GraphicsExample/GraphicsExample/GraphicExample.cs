@@ -24,6 +24,21 @@ namespace GraphicsExample
             thePen.Dispose();
         }
 
+        void DrawEllipse()
+        {
+            //create a graphics object named g that draws on the picture box
+            Graphics g = DisplayPictureBox.CreateGraphics();
+            //create a pen to draw with
+            Pen thePen = new Pen(Color.Black);
+            thePen.Width = 5;
+            //draw the line here
+            g.DrawEllipse(thePen, 0, 0, 100, 100);
+
+            //free up resorces
+            g.Dispose();
+            thePen.Dispose();
+        }
+
         // Event handlers-------------------------------------------------------------------------
 
         private void ExitButton_Click(object sender, EventArgs e)
@@ -34,6 +49,7 @@ namespace GraphicsExample
         private void DrawButton_Click(object sender, EventArgs e)
         {
             DrawLine();
+            DrawEllipse();
         }
     }
 }
