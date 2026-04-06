@@ -46,6 +46,7 @@
             // 
             // DrawButton
             // 
+            DrawButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             DrawButton.Location = new Point(772, 448);
             DrawButton.Name = "DrawButton";
             DrawButton.Size = new Size(116, 53);
@@ -56,6 +57,7 @@
             // 
             // ExitButton
             // 
+            ExitButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             ExitButton.Location = new Point(894, 448);
             ExitButton.Name = "ExitButton";
             ExitButton.Size = new Size(116, 53);
