@@ -22,6 +22,7 @@ namespace GraphicsExample
             //create a pen to draw with
             Pen thePen = new Pen(Color.Black);
             thePen.Width = 5;
+            thePen.Color = PenColorDialog.Color;
             //draw the line here
             g.DrawLine(thePen, oldX, oldY, newX, newY);
 
