@@ -32,6 +32,7 @@
             DrawButton = new Button();
             ExitButton = new Button();
             ClearButton = new Button();
+            PenColorDialog = new ColorDialog();
             ((System.ComponentModel.ISupportInitialize)DisplayPictureBox).BeginInit();
             SuspendLayout();
             // 
@@ -100,5 +101,6 @@
         private Button DrawButton;
         private Button ExitButton;
         private Button ClearButton;
+        private ColorDialog PenColorDialog;
     }
 }

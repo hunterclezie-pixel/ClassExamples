@@ -8,8 +8,9 @@ namespace GraphicsExample
         public GraphicExample()
         {
             InitializeComponent();
-            DisplayPictureBox.MouseMove += DisplayPictureBox_MouseMove;
-            DisplayPictureBox.MouseDown += DisplayPictureBox_MouseDown;
+            DisplayPictureBox.MouseMove += DisplayPictureBox_MouseStuff;
+            //DisplayPictureBox.MouseDown += DisplayPictureBox_MouseDown;
+            DisplayPictureBox.MouseDown += DisplayPictureBox_MouseStuff;
         }
 
         // Custom methods-------------------------------------------------------------------------
@@ -135,7 +136,7 @@ namespace GraphicsExample
             DrawText();
         }
 
-        private void DisplayPictureBox_MouseMove(object? sender, MouseEventArgs e)
+        private void DisplayPictureBox_MouseStuff(object? sender, MouseEventArgs e)
         {
             switch (e.Button)
             {
@@ -147,6 +148,7 @@ namespace GraphicsExample
                     break;
                 case MouseButtons.Middle:
                     //Todo: open color picker dialogue
+                    PenColorDialog.ShowDialog();
                     break;
                 default:
                     //MessageBox.Show($"{e.Button}");
@@ -158,11 +160,13 @@ namespace GraphicsExample
             this.Text = $"{e.X},{e.Y}";
         }
 
-        private void DisplayPictureBox_MouseDown(object? sender, MouseEventArgs e)
-        {
-            this.Text += $"{e.Button}";
+        //private void DisplayPictureBox_MouseDown(object? sender, MouseEventArgs e)
+        //{
+            //this.Text += $"{e.Button}";
 
-        }
+            //PenColorDialog.ShowDialog();
+
+        //}
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
