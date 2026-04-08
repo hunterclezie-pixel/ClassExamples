@@ -9,6 +9,7 @@ namespace GraphicsExample
         {
             InitializeComponent();
             DisplayPictureBox.MouseMove += DisplayPictureBox_MouseMove;
+            DisplayPictureBox.MouseDown += DisplayPictureBox_MouseDown;
         }
 
         // Custom methods-------------------------------------------------------------------------
@@ -19,11 +20,9 @@ namespace GraphicsExample
             Graphics g = DisplayPictureBox.CreateGraphics();
             //create a pen to draw with
             Pen thePen = new Pen(Color.Black);
-            thePen.Width = 10;
+            thePen.Width = 5;
             //draw the line here
             g.DrawLine(thePen, oldX, oldY, newX, newY);
-            oldX = newX;
-            oldY = newY;
 
             //free up resorces
             g.Dispose();
@@ -138,8 +137,31 @@ namespace GraphicsExample
 
         private void DisplayPictureBox_MouseMove(object? sender, MouseEventArgs e)
         {
+            switch (e.Button)
+            {
+                case MouseButtons.Left:
+                    DrawLineSegment(e.X, e.Y);
+                    break;
+                case MouseButtons.Right:
+                    //Save for context menu
+                    break;
+                case MouseButtons.Middle:
+                    //Todo: open color picker dialogue
+                    break;
+                default:
+                    //MessageBox.Show($"{e.Button}");
+                    break;
+            }
+            //Update last position on every move
+            this.oldX = e.X;
+            this.oldY = e.Y;
             this.Text = $"{e.X},{e.Y}";
-            DrawLineSegment(e.X,e.Y);
+        }
+
+        private void DisplayPictureBox_MouseDown(object? sender, MouseEventArgs e)
+        {
+            this.Text += $"{e.Button}";
+
         }
     }
 }
