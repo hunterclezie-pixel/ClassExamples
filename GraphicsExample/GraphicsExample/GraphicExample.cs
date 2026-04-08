@@ -163,5 +163,10 @@ namespace GraphicsExample
             this.Text += $"{e.Button}";
 
         }
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            DisplayPictureBox.Refresh();
+        }
     }
 }

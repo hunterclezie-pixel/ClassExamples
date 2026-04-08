@@ -31,6 +31,7 @@
             DisplayPictureBox = new PictureBox();
             DrawButton = new Button();
             ExitButton = new Button();
+            ClearButton = new Button();
             ((System.ComponentModel.ISupportInitialize)DisplayPictureBox).BeginInit();
             SuspendLayout();
             // 
@@ -47,7 +48,7 @@
             // DrawButton
             // 
             DrawButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            DrawButton.Location = new Point(772, 448);
+            DrawButton.Location = new Point(650, 448);
             DrawButton.Name = "DrawButton";
             DrawButton.Size = new Size(116, 53);
             DrawButton.TabIndex = 1;
@@ -66,11 +67,23 @@
             ExitButton.UseVisualStyleBackColor = true;
             ExitButton.Click += ExitButton_Click;
             // 
+            // ClearButton
+            // 
+            ClearButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            ClearButton.Location = new Point(772, 448);
+            ClearButton.Name = "ClearButton";
+            ClearButton.Size = new Size(116, 53);
+            ClearButton.TabIndex = 3;
+            ClearButton.Text = "Clear";
+            ClearButton.UseVisualStyleBackColor = true;
+            ClearButton.Click += ClearButton_Click;
+            // 
             // GraphicExample
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1022, 513);
+            Controls.Add(ClearButton);
             Controls.Add(ExitButton);
             Controls.Add(DrawButton);
             Controls.Add(DisplayPictureBox);
@@ -86,5 +99,6 @@
         private PictureBox DisplayPictureBox;
         private Button DrawButton;
         private Button ExitButton;
+        private Button ClearButton;
     }
 }
