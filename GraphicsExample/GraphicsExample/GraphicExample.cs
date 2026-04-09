@@ -20,9 +20,8 @@ namespace GraphicsExample
             //create a graphics object named g that draws on the picture box
             Graphics g = DisplayPictureBox.CreateGraphics();
             //create a pen to draw with
-            Pen thePen = new Pen(Color.Black);
+            Pen thePen = new Pen(this.penColor);
             thePen.Width = 5;
-            thePen.Color = PenColorDialog.Color;
             //draw the line here
             g.DrawLine(thePen, oldX, oldY, newX, newY);
 
@@ -121,6 +120,13 @@ namespace GraphicsExample
             theImage.Dispose();
         }
 
+        private Color penColor = Color.Black;
+        void UpdateForeColor()
+        { 
+            PenColorDialog.ShowDialog();
+            this.penColor = PenColorDialog.Color;
+        }
+
         // Event handlers-------------------------------------------------------------------------
 
         private void ExitButton_Click(object sender, EventArgs e)
@@ -149,7 +155,7 @@ namespace GraphicsExample
                     break;
                 case MouseButtons.Middle:
                     //Todo: open color picker dialogue
-                    PenColorDialog.ShowDialog();
+                    UpdateForeColor();
                     break;
                 default:
                     //MessageBox.Show($"{e.Button}");
