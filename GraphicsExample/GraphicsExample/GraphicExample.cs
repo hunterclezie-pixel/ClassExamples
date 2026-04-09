@@ -127,6 +127,26 @@ namespace GraphicsExample
             this.penColor = PenColorDialog.Color;
         }
 
+        void DrawSineWave()
+        {
+            //create a graphics object named g that draws on the picture box
+            Graphics g = DisplayPictureBox.CreateGraphics();
+            //create a pen to draw with
+            Pen thePen = new Pen(Color.Lime);
+            int lastX = 0, lastY = 0, currentY = 0;
+            for (int currentX = 0; currentX < 360; currentX++)
+            {
+                currentY = (int)(Math.Round(100 * Math.Sin(currentX)));
+                g.DrawLine(thePen, lastX, lastY, currentX, currentY);
+                lastX = currentX;
+                lastY = currentY;
+            }
+
+            //free up resorces
+            g.Dispose();
+            thePen.Dispose();
+        }
+
         // Event handlers-------------------------------------------------------------------------
 
         private void ExitButton_Click(object sender, EventArgs e)
@@ -136,11 +156,12 @@ namespace GraphicsExample
 
         private void DrawButton_Click(object sender, EventArgs e)
         {
-            DrawEllipse();
-            DrawRectangle();
-            DrawPie();
-            DrawImage();
-            DrawText();
+            //DrawEllipse();
+            //DrawRectangle();
+            //DrawPie();
+            //DrawImage();
+            //DrawText();
+            DrawSineWave();
         }
 
         private void DisplayPictureBox_MouseStuff(object? sender, MouseEventArgs e)
