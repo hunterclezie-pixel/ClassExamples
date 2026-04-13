@@ -135,11 +135,11 @@ namespace GraphicsExample
             Pen thePen = new Pen(Color.Lime);
             int lastX = 0, lastY = 0, currentY = 0;
             float scaleX = DisplayPictureBox.Width / 360f;
-            float scaleY = DisplayPictureBox.Height / 200f;
+            float scaleY = (DisplayPictureBox.Height / 200f) * -1;
 
             g.TranslateTransform(0, DisplayPictureBox.Height / 2);
 
-            g.ScaleTransform(scaleX, -1f);
+            g.ScaleTransform(scaleX, scaleY);
 
             for (int currentX = 0; currentX < 360; currentX++)
             {
