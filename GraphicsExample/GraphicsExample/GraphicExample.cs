@@ -19,14 +19,18 @@ namespace GraphicsExample
         }
 
         // Custom methods-------------------------------------------------------------------------
-        int oldX, oldY;
+        private int oldX, oldY;
+        private Color penColor = Color.Black;
+        private Color backColor = Color.White;
+        private int penWidth = 1;   
+
         void DrawLineSegment(int newX, int newY)
         {
             //create a graphics object named g that draws on the picture box
             Graphics g = DisplayPictureBox.CreateGraphics();
             //create a pen to draw with
             Pen thePen = new Pen(this.penColor);
-            thePen.Width = 1;
+            thePen.Width = penWidth;
             //draw the line here
             g.DrawLine(thePen, oldX, oldY, newX, newY);
 
@@ -40,8 +44,8 @@ namespace GraphicsExample
             //create a graphics object named g that draws on the picture box
             Graphics g = DisplayPictureBox.CreateGraphics();
             //create a pen to draw with
-            Pen thePen = new Pen(Color.Black);
-            thePen.Width = 5;
+            Pen thePen = new Pen(this.penColor);
+            thePen.Width = penWidth;
             //draw the line here
             g.DrawEllipse(thePen, 0, 0, 100, 100);
 
@@ -125,7 +129,6 @@ namespace GraphicsExample
             theImage.Dispose();
         }
 
-        private Color penColor = Color.Black;
         void UpdateForeColor()
         { 
             PenColorDialog.ShowDialog();
