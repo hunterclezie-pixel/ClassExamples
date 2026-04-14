@@ -230,5 +230,7 @@ namespace GraphicsExample
         {
             DisplayPictureBox.Refresh();
         }
+
+
     }
 }

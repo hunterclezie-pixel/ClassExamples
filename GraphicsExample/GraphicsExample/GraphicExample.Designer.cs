@@ -33,14 +33,22 @@
             ExitButton = new Button();
             ClearButton = new Button();
             PenColorDialog = new ColorDialog();
+            MenuStrip = new MenuStrip();
+            FileTopMenuItem = new ToolStripMenuItem();
+            HelpTopMenuItem = new ToolStripMenuItem();
+            DrawTopMenuItem = new ToolStripMenuItem();
+            ClearTopMenuItem = new ToolStripMenuItem();
+            ExitTopMenuItem = new ToolStripMenuItem();
+            AboutTopMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)DisplayPictureBox).BeginInit();
+            MenuStrip.SuspendLayout();
             SuspendLayout();
             // 
             // DisplayPictureBox
             // 
             DisplayPictureBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             DisplayPictureBox.BackColor = SystemColors.ActiveCaption;
-            DisplayPictureBox.Location = new Point(12, 12);
+            DisplayPictureBox.Location = new Point(12, 48);
             DisplayPictureBox.Name = "DisplayPictureBox";
             DisplayPictureBox.Size = new Size(998, 394);
             DisplayPictureBox.TabIndex = 0;
@@ -79,6 +87,54 @@
             ClearButton.UseVisualStyleBackColor = true;
             ClearButton.Click += ClearButton_Click;
             // 
+            // MenuStrip
+            // 
+            MenuStrip.ImageScalingSize = new Size(20, 20);
+            MenuStrip.Items.AddRange(new ToolStripItem[] { FileTopMenuItem, HelpTopMenuItem });
+            MenuStrip.Location = new Point(0, 0);
+            MenuStrip.Name = "MenuStrip";
+            MenuStrip.Size = new Size(1022, 28);
+            MenuStrip.TabIndex = 4;
+            MenuStrip.Text = "menuStrip1";
+            // 
+            // FileTopMenuItem
+            // 
+            FileTopMenuItem.DropDownItems.AddRange(new ToolStripItem[] { DrawTopMenuItem, ClearTopMenuItem, ExitTopMenuItem });
+            FileTopMenuItem.Name = "FileTopMenuItem";
+            FileTopMenuItem.Size = new Size(46, 24);
+            FileTopMenuItem.Text = "File";
+            // 
+            // HelpTopMenuItem
+            // 
+            HelpTopMenuItem.DropDownItems.AddRange(new ToolStripItem[] { AboutTopMenuItem });
+            HelpTopMenuItem.Name = "HelpTopMenuItem";
+            HelpTopMenuItem.Size = new Size(55, 24);
+            HelpTopMenuItem.Text = "Help";
+            // 
+            // DrawTopMenuItem
+            // 
+            DrawTopMenuItem.Name = "DrawTopMenuItem";
+            DrawTopMenuItem.Size = new Size(224, 26);
+            DrawTopMenuItem.Text = "Draw";
+            // 
+            // ClearTopMenuItem
+            // 
+            ClearTopMenuItem.Name = "ClearTopMenuItem";
+            ClearTopMenuItem.Size = new Size(224, 26);
+            ClearTopMenuItem.Text = "Clear";
+            // 
+            // ExitTopMenuItem
+            // 
+            ExitTopMenuItem.Name = "ExitTopMenuItem";
+            ExitTopMenuItem.Size = new Size(224, 26);
+            ExitTopMenuItem.Text = "Exit";
+            // 
+            // AboutTopMenuItem
+            // 
+            AboutTopMenuItem.Name = "AboutTopMenuItem";
+            AboutTopMenuItem.Size = new Size(224, 26);
+            AboutTopMenuItem.Text = "About";
+            // 
             // GraphicExample
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -88,11 +144,16 @@
             Controls.Add(ExitButton);
             Controls.Add(DrawButton);
             Controls.Add(DisplayPictureBox);
+            Controls.Add(MenuStrip);
+            MainMenuStrip = MenuStrip;
             MinimumSize = new Size(500, 500);
             Name = "GraphicExample";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)DisplayPictureBox).EndInit();
+            MenuStrip.ResumeLayout(false);
+            MenuStrip.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -102,5 +163,12 @@
         private Button ExitButton;
         private Button ClearButton;
         private ColorDialog PenColorDialog;
+        private MenuStrip MenuStrip;
+        private ToolStripMenuItem FileTopMenuItem;
+        private ToolStripMenuItem DrawTopMenuItem;
+        private ToolStripMenuItem ClearTopMenuItem;
+        private ToolStripMenuItem ExitTopMenuItem;
+        private ToolStripMenuItem HelpTopMenuItem;
+        private ToolStripMenuItem AboutTopMenuItem;
     }
 }
