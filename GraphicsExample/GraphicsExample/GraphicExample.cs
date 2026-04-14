@@ -11,6 +11,11 @@ namespace GraphicsExample
             DisplayPictureBox.MouseMove += DisplayPictureBox_MouseStuff;
             //DisplayPictureBox.MouseDown += DisplayPictureBox_MouseDown;
             DisplayPictureBox.MouseDown += DisplayPictureBox_MouseStuff;
+            ClearTopMenuItem.Click += ClearButton_Click;
+            ClearContextMenuItem.Click += ClearButton_Click;
+            DrawTopMenuItem.Click += DrawButton_Click;
+            DrawContextMenuItem.Click += DrawButton_Click;
+            ExitTopMenuItem.Click += ExitButton_Click;
         }
 
         // Custom methods-------------------------------------------------------------------------
@@ -171,7 +176,7 @@ namespace GraphicsExample
             this.oldY = 0;
             for (int y = 0; y < DisplayPictureBox.Height; y += yDiv)
             {
-                oldY += y;
+                oldY = y;
                 DrawLineSegment(DisplayPictureBox.Width, y);
             }
         }
