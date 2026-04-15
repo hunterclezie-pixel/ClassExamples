@@ -16,13 +16,14 @@ namespace GraphicsExample
             DrawTopMenuItem.Click += DrawButton_Click;
             DrawContextMenuItem.Click += DrawButton_Click;
             ExitTopMenuItem.Click += ExitButton_Click;
+            PenContextMenuItem.Click += PenContextMenuItem_Click;
         }
 
         // Custom methods-------------------------------------------------------------------------
         private int oldX, oldY;
         private Color penColor = Color.Black;
         private Color backColor = Color.White;
-        private int penWidth = 1;   
+        private int penSize = 1;
 
         void DrawLineSegment(int newX, int newY)
         {
@@ -30,7 +31,7 @@ namespace GraphicsExample
             Graphics g = DisplayPictureBox.CreateGraphics();
             //create a pen to draw with
             Pen thePen = new Pen(this.penColor);
-            thePen.Width = penWidth;
+            thePen.Width = penSize;
             //draw the line here
             g.DrawLine(thePen, oldX, oldY, newX, newY);
 
@@ -45,7 +46,7 @@ namespace GraphicsExample
             Graphics g = DisplayPictureBox.CreateGraphics();
             //create a pen to draw with
             Pen thePen = new Pen(this.penColor);
-            thePen.Width = penWidth;
+            thePen.Width = penSize;
             //draw the line here
             g.DrawEllipse(thePen, 0, 0, 100, 100);
 
@@ -130,9 +131,27 @@ namespace GraphicsExample
         }
 
         void UpdateForeColor()
-        { 
+        {
             PenColorDialog.ShowDialog();
             this.penColor = PenColorDialog.Color;
+        }
+
+        void UpdatePenColor()
+        {
+            PenColorDialog.ShowDialog();
+            this.penColor = PenColorDialog.Color;
+        }
+
+        void UpdateBackgroundColor()
+        {
+            PenColorDialog.ShowDialog();
+            this.backColor = PenColorDialog.Color;
+            DisplayPictureBox.BackColor = this.backColor;
+        }
+
+        void UpdatePenSize()
+        {
+            this.penSize = int.Parse(PenSizeComboBox.SelectedItem.ToString());
         }
 
         void DrawSineWave()
@@ -165,8 +184,8 @@ namespace GraphicsExample
         void DrawGrid()
         {
             int xDiv = DisplayPictureBox.Width / 10;
-            int yDiv = DisplayPictureBox.Height / 8;   
-            
+            int yDiv = DisplayPictureBox.Height / 8;
+
             this.oldX = 0;
             this.oldY = 0;
             for (int x = 0; x < DisplayPictureBox.Width; x += xDiv)
@@ -204,13 +223,14 @@ namespace GraphicsExample
 
         private void DisplayPictureBox_MouseStuff(object? sender, MouseEventArgs e)
         {
+            DrawingStatusLabel.Text = $"{e.X.ToString().PadLeft(4)},{e.Y.ToString().PadLeft(4)}";
             switch (e.Button)
             {
                 case MouseButtons.Left:
                     DrawLineSegment(e.X, e.Y);
                     break;
                 case MouseButtons.Right:
-                    //Save for context menu
+                    DisplayContextMenuStrip.Show(DisplayPictureBox, e.Location);
                     break;
                 case MouseButtons.Middle:
                     //Todo: open color picker dialogue
@@ -226,19 +246,22 @@ namespace GraphicsExample
             this.Text = $"{e.X},{e.Y}";
         }
 
-        //private void DisplayPictureBox_MouseDown(object? sender, MouseEventArgs e)
-        //{
-            //this.Text += $"{e.Button}";
+        private void DisplayPictureBox_MouseDown(object? sender, MouseEventArgs e)
+        {
+            this.Text += $"{e.Button}";
 
-            //PenColorDialog.ShowDialog();
+            PenColorDialog.ShowDialog();
 
-        //}
+        }
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
             DisplayPictureBox.Refresh();
         }
 
-
+        private void PenContextMenuItem_Click(object? sender, EventArgs e)
+        {
+            UpdatePenColor();
+        }
     }
 }

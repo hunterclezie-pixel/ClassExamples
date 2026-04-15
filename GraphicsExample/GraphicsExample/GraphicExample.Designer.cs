@@ -36,10 +36,10 @@
             PenColorDialog = new ColorDialog();
             MenuStrip = new MenuStrip();
             FileTopMenuItem = new ToolStripMenuItem();
-            HelpTopMenuItem = new ToolStripMenuItem();
             DrawTopMenuItem = new ToolStripMenuItem();
             ClearTopMenuItem = new ToolStripMenuItem();
             ExitTopMenuItem = new ToolStripMenuItem();
+            HelpTopMenuItem = new ToolStripMenuItem();
             AboutTopMenuItem = new ToolStripMenuItem();
             DisplayContextMenuStrip = new ContextMenuStrip(components);
             DrawContextMenuItem = new ToolStripMenuItem();
@@ -49,27 +49,30 @@
             BackgroundColorContextMenuItem = new ToolStripMenuItem();
             PenSizeContextMenuItem = new ToolStripMenuItem();
             PenSizeComboBox = new ToolStripComboBox();
+            BottomStatusStrip = new StatusStrip();
+            DrawingStatusLabel = new ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)DisplayPictureBox).BeginInit();
             MenuStrip.SuspendLayout();
             DisplayContextMenuStrip.SuspendLayout();
+            BottomStatusStrip.SuspendLayout();
             SuspendLayout();
             // 
             // DisplayPictureBox
             // 
             DisplayPictureBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             DisplayPictureBox.BackColor = SystemColors.ActiveCaption;
-            DisplayPictureBox.Location = new Point(12, 48);
+            DisplayPictureBox.Location = new Point(14, 36);
             DisplayPictureBox.Name = "DisplayPictureBox";
-            DisplayPictureBox.Size = new Size(998, 394);
+            DisplayPictureBox.Size = new Size(1055, 384);
             DisplayPictureBox.TabIndex = 0;
             DisplayPictureBox.TabStop = false;
             // 
             // DrawButton
             // 
             DrawButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            DrawButton.Location = new Point(650, 448);
+            DrawButton.Location = new Point(663, 431);
             DrawButton.Name = "DrawButton";
-            DrawButton.Size = new Size(116, 53);
+            DrawButton.Size = new Size(130, 61);
             DrawButton.TabIndex = 1;
             DrawButton.Text = "Draw";
             DrawButton.UseVisualStyleBackColor = true;
@@ -78,9 +81,9 @@
             // ExitButton
             // 
             ExitButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            ExitButton.Location = new Point(894, 448);
+            ExitButton.Location = new Point(938, 431);
             ExitButton.Name = "ExitButton";
-            ExitButton.Size = new Size(116, 53);
+            ExitButton.Size = new Size(130, 61);
             ExitButton.TabIndex = 2;
             ExitButton.Text = "Exit";
             ExitButton.UseVisualStyleBackColor = true;
@@ -89,9 +92,9 @@
             // ClearButton
             // 
             ClearButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            ClearButton.Location = new Point(772, 448);
+            ClearButton.Location = new Point(800, 431);
             ClearButton.Name = "ClearButton";
-            ClearButton.Size = new Size(116, 53);
+            ClearButton.Size = new Size(130, 61);
             ClearButton.TabIndex = 3;
             ClearButton.Text = "Clear";
             ClearButton.UseVisualStyleBackColor = true;
@@ -103,46 +106,49 @@
             MenuStrip.Items.AddRange(new ToolStripItem[] { FileTopMenuItem, HelpTopMenuItem });
             MenuStrip.Location = new Point(0, 0);
             MenuStrip.Name = "MenuStrip";
-            MenuStrip.Size = new Size(1022, 28);
+            MenuStrip.Padding = new Padding(7, 2, 0, 2);
+            MenuStrip.Size = new Size(1082, 31);
             MenuStrip.TabIndex = 4;
             MenuStrip.Text = "menuStrip1";
             // 
             // FileTopMenuItem
             // 
             FileTopMenuItem.DropDownItems.AddRange(new ToolStripItem[] { DrawTopMenuItem, ClearTopMenuItem, ExitTopMenuItem });
+            FileTopMenuItem.Font = new Font("Source Code Pro", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FileTopMenuItem.Name = "FileTopMenuItem";
-            FileTopMenuItem.Size = new Size(46, 24);
+            FileTopMenuItem.Size = new Size(60, 27);
             FileTopMenuItem.Text = "File";
-            // 
-            // HelpTopMenuItem
-            // 
-            HelpTopMenuItem.DropDownItems.AddRange(new ToolStripItem[] { AboutTopMenuItem });
-            HelpTopMenuItem.Name = "HelpTopMenuItem";
-            HelpTopMenuItem.Size = new Size(55, 24);
-            HelpTopMenuItem.Text = "Help";
             // 
             // DrawTopMenuItem
             // 
             DrawTopMenuItem.Name = "DrawTopMenuItem";
-            DrawTopMenuItem.Size = new Size(224, 26);
+            DrawTopMenuItem.Size = new Size(224, 28);
             DrawTopMenuItem.Text = "Draw";
             // 
             // ClearTopMenuItem
             // 
             ClearTopMenuItem.Name = "ClearTopMenuItem";
-            ClearTopMenuItem.Size = new Size(224, 26);
+            ClearTopMenuItem.Size = new Size(224, 28);
             ClearTopMenuItem.Text = "Clear";
             // 
             // ExitTopMenuItem
             // 
             ExitTopMenuItem.Name = "ExitTopMenuItem";
-            ExitTopMenuItem.Size = new Size(224, 26);
+            ExitTopMenuItem.Size = new Size(224, 28);
             ExitTopMenuItem.Text = "Exit";
+            // 
+            // HelpTopMenuItem
+            // 
+            HelpTopMenuItem.DropDownItems.AddRange(new ToolStripItem[] { AboutTopMenuItem });
+            HelpTopMenuItem.Font = new Font("Source Code Pro", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            HelpTopMenuItem.Name = "HelpTopMenuItem";
+            HelpTopMenuItem.Size = new Size(60, 27);
+            HelpTopMenuItem.Text = "Help";
             // 
             // AboutTopMenuItem
             // 
             AboutTopMenuItem.Name = "AboutTopMenuItem";
-            AboutTopMenuItem.Size = new Size(224, 26);
+            AboutTopMenuItem.Size = new Size(224, 28);
             AboutTopMenuItem.Text = "About";
             // 
             // DisplayContextMenuStrip
@@ -155,39 +161,39 @@
             // DrawContextMenuItem
             // 
             DrawContextMenuItem.Name = "DrawContextMenuItem";
-            DrawContextMenuItem.Size = new Size(210, 24);
+            DrawContextMenuItem.Size = new Size(132, 24);
             DrawContextMenuItem.Text = "Draw";
             // 
             // ClearContextMenuItem
             // 
             ClearContextMenuItem.Name = "ClearContextMenuItem";
-            ClearContextMenuItem.Size = new Size(210, 24);
+            ClearContextMenuItem.Size = new Size(132, 24);
             ClearContextMenuItem.Text = "Clear";
             // 
             // ColorContextMenuItem
             // 
             ColorContextMenuItem.DropDownItems.AddRange(new ToolStripItem[] { PenContextMenuItem, BackgroundColorContextMenuItem });
             ColorContextMenuItem.Name = "ColorContextMenuItem";
-            ColorContextMenuItem.Size = new Size(210, 24);
+            ColorContextMenuItem.Size = new Size(132, 24);
             ColorContextMenuItem.Text = "Color";
             // 
             // PenContextMenuItem
             // 
             PenContextMenuItem.Name = "PenContextMenuItem";
-            PenContextMenuItem.Size = new Size(224, 26);
+            PenContextMenuItem.Size = new Size(211, 26);
             PenContextMenuItem.Text = "Pen";
             // 
             // BackgroundColorContextMenuItem
             // 
             BackgroundColorContextMenuItem.Name = "BackgroundColorContextMenuItem";
-            BackgroundColorContextMenuItem.Size = new Size(224, 26);
+            BackgroundColorContextMenuItem.Size = new Size(211, 26);
             BackgroundColorContextMenuItem.Text = "Background Color";
             // 
             // PenSizeContextMenuItem
             // 
             PenSizeContextMenuItem.DropDownItems.AddRange(new ToolStripItem[] { PenSizeComboBox });
             PenSizeContextMenuItem.Name = "PenSizeContextMenuItem";
-            PenSizeContextMenuItem.Size = new Size(210, 24);
+            PenSizeContextMenuItem.Size = new Size(132, 24);
             PenSizeContextMenuItem.Text = "Pen Size";
             // 
             // PenSizeComboBox
@@ -195,24 +201,46 @@
             PenSizeComboBox.Name = "PenSizeComboBox";
             PenSizeComboBox.Size = new Size(121, 28);
             // 
+            // BottomStatusStrip
+            // 
+            BottomStatusStrip.ImageScalingSize = new Size(20, 20);
+            BottomStatusStrip.Items.AddRange(new ToolStripItem[] { DrawingStatusLabel });
+            BottomStatusStrip.Location = new Point(0, 492);
+            BottomStatusStrip.Name = "BottomStatusStrip";
+            BottomStatusStrip.Padding = new Padding(1, 0, 16, 0);
+            BottomStatusStrip.Size = new Size(1082, 29);
+            BottomStatusStrip.TabIndex = 5;
+            BottomStatusStrip.Text = "statusStrip1";
+            // 
+            // DrawingStatusLabel
+            // 
+            DrawingStatusLabel.Font = new Font("Source Code Pro", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DrawingStatusLabel.Name = "DrawingStatusLabel";
+            DrawingStatusLabel.Size = new Size(136, 23);
+            DrawingStatusLabel.Text = "Please Wait...";
+            // 
             // GraphicExample
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1022, 513);
+            ClientSize = new Size(1082, 521);
+            Controls.Add(BottomStatusStrip);
             Controls.Add(ClearButton);
             Controls.Add(ExitButton);
             Controls.Add(DrawButton);
             Controls.Add(DisplayPictureBox);
             Controls.Add(MenuStrip);
+            Font = new Font("Source Code Pro", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             MainMenuStrip = MenuStrip;
-            MinimumSize = new Size(500, 500);
+            MinimumSize = new Size(560, 568);
             Name = "GraphicExample";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)DisplayPictureBox).EndInit();
             MenuStrip.ResumeLayout(false);
             MenuStrip.PerformLayout();
             DisplayContextMenuStrip.ResumeLayout(false);
+            BottomStatusStrip.ResumeLayout(false);
+            BottomStatusStrip.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -239,5 +267,7 @@
         private ToolStripMenuItem BackgroundColorContextMenuItem;
         private ToolStripMenuItem PenSizeContextMenuItem;
         private ToolStripComboBox PenSizeComboBox;
+        private StatusStrip BottomStatusStrip;
+        private ToolStripStatusLabel DrawingStatusLabel;
     }
 }
