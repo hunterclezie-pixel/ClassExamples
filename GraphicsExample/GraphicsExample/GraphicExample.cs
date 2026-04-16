@@ -18,6 +18,9 @@ namespace GraphicsExample
             ExitTopMenuItem.Click += ExitButton_Click;
             PenContextMenuItem.Click += PenContextMenuItem_Click;
             BackgroundColorContextMenuItem.Click += BackgroundColorContextMenuItem_Click;
+
+            SplashFormcs splashForm = new SplashFormcs();
+            splashForm.Show();
         }
 
         // Custom methods-------------------------------------------------------------------------
