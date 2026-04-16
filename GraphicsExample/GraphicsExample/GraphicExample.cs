@@ -17,6 +17,7 @@ namespace GraphicsExample
             DrawContextMenuItem.Click += DrawButton_Click;
             ExitTopMenuItem.Click += ExitButton_Click;
             PenContextMenuItem.Click += PenContextMenuItem_Click;
+            BackgroundColorContextMenuItem.Click += BackgroundColorContextMenuItem_Click;
         }
 
         // Custom methods-------------------------------------------------------------------------
@@ -262,6 +263,23 @@ namespace GraphicsExample
         private void PenContextMenuItem_Click(object? sender, EventArgs e)
         {
             UpdatePenColor();
+        }
+
+        private void BackgroundColorContextMenuItem_Click(object sender, EventArgs e)
+        {
+            UpdateBackgroundColor();
+        }
+
+        private void AboutTopMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutForm aboutForm = new AboutForm();
+            aboutForm.FormClosed += AboutForm_FormClosed;
+            aboutForm.Show();
+            this.Hide();
+        }
+        private void AboutForm_FormClosed(object? sender, FormClosedEventArgs e)
+        {
+            this.Show();
         }
     }
 }

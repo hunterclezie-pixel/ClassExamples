@@ -122,19 +122,19 @@
             // DrawTopMenuItem
             // 
             DrawTopMenuItem.Name = "DrawTopMenuItem";
-            DrawTopMenuItem.Size = new Size(224, 28);
+            DrawTopMenuItem.Size = new Size(139, 28);
             DrawTopMenuItem.Text = "Draw";
             // 
             // ClearTopMenuItem
             // 
             ClearTopMenuItem.Name = "ClearTopMenuItem";
-            ClearTopMenuItem.Size = new Size(224, 28);
+            ClearTopMenuItem.Size = new Size(139, 28);
             ClearTopMenuItem.Text = "Clear";
             // 
             // ExitTopMenuItem
             // 
             ExitTopMenuItem.Name = "ExitTopMenuItem";
-            ExitTopMenuItem.Size = new Size(224, 28);
+            ExitTopMenuItem.Size = new Size(139, 28);
             ExitTopMenuItem.Text = "Exit";
             // 
             // HelpTopMenuItem
@@ -150,6 +150,7 @@
             AboutTopMenuItem.Name = "AboutTopMenuItem";
             AboutTopMenuItem.Size = new Size(224, 28);
             AboutTopMenuItem.Text = "About";
+            AboutTopMenuItem.Click += AboutTopMenuItem_Click;
             // 
             // DisplayContextMenuStrip
             // 
@@ -180,14 +181,15 @@
             // PenContextMenuItem
             // 
             PenContextMenuItem.Name = "PenContextMenuItem";
-            PenContextMenuItem.Size = new Size(211, 26);
+            PenContextMenuItem.Size = new Size(224, 26);
             PenContextMenuItem.Text = "Pen";
             // 
             // BackgroundColorContextMenuItem
             // 
             BackgroundColorContextMenuItem.Name = "BackgroundColorContextMenuItem";
-            BackgroundColorContextMenuItem.Size = new Size(211, 26);
+            BackgroundColorContextMenuItem.Size = new Size(224, 26);
             BackgroundColorContextMenuItem.Text = "Background Color";
+            BackgroundColorContextMenuItem.Click += BackgroundColorContextMenuItem_Click;
             // 
             // PenSizeContextMenuItem
             // 
