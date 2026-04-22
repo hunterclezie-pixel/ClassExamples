@@ -18,7 +18,6 @@ namespace WindformsExample
             CityTextBox.BackColor = Color.LightYellow;
             PhoneTextBox.Text = "";
             PhoneTextBox.BackColor = Color.LightYellow;
-            DisplayLabel.Text = "";
 
             UpperCaseRadioButton.Checked = true;
             SubmitButton.Enabled = false;
@@ -99,6 +98,77 @@ namespace WindformsExample
             }
         }
 
+        static int CountOfLinesIn(string filePath)
+        {
+            int count = 0;
+            using (StreamReader testFile = new StreamReader(filePath))
+
+            {
+                do
+                {
+                    testFile.ReadLine();
+                    count++;
+                } while (!testFile.EndOfStream);
+            }
+
+            return count;
+        }
+
+        static string[,] FileToArray(string filePath)
+        {
+            string[,] customerData = new string[4, CountOfLinesIn(filePath)];
+            string[] temp;
+            int counter = 0;
+
+            using (StreamReader testFile = new StreamReader(filePath))
+            {
+                do
+                {
+                    temp = testFile.ReadLine().Split(",");
+                    if (temp.Length == 5)
+                    {
+                        temp[0] = temp[0].Replace("\"$$", "");
+                        temp[3] = temp[3].Replace("\"", "");
+                        customerData[0, counter] = temp[0];
+                        customerData[1, counter] = temp[1];
+                        customerData[2, counter] = temp[2];
+                        customerData[3, counter] = temp[3];
+                    }
+                    counter++;
+                } while (!testFile.EndOfStream);
+            }
+
+            return customerData;
+        }
+
+        static void DisplayData(string[,] data)
+        {
+            string formattedRow = "";
+
+            for (int row = 0; row < data.GetLength(1); row++)
+            {
+                for (int column = 0; column < data.GetLength(0); column++)
+                {
+                    try
+                    {
+                        if (data[column, row] != null)
+                        {
+                            formattedRow += data[column, row].PadRight(15);
+                        }
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+                }
+                if (formattedRow != "")
+                {
+                    DisplayListBox.Items.Add(formattedRow);
+                }
+                formattedRow = "";
+            }
+        }
+
         //Event Handlers Below
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -117,10 +187,10 @@ namespace WindformsExample
                 //this.Text = NameTextBox.Text;
                 //Uppercase();
                 //Reverse();
-                DisplayLabel.Text = LowerCase(Reverse(Uppercase(NameTextBox.Text +
-                    "\n" + AgeTextBox.Text +
-                    "\n" + CityTextBox.Text +
-                    "\n" + PhoneTextBox.Text)));
+                //DisplayLabel.Text = LowerCase(Reverse(Uppercase(NameTextBox.Text +
+                //    "\n" + AgeTextBox.Text +
+                //    "\n" + CityTextBox.Text +
+                //    "\n" + PhoneTextBox.Text)));
             }
         }
 
@@ -232,7 +302,18 @@ namespace WindformsExample
 
         private void OpenTopMenuItem_Click(object sender, EventArgs e)
         {
+            string filePath = "";
+            string[,] fileData;
+            MainOpenFileDialog.FileName = "";
+            MainOpenFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
+            MainOpenFileDialog.ShowDialog();
 
+            if (MainOpenFileDialog.ShowDialog() == DialogResult.OK)
+            { 
+                filePath = MainOpenFileDialog.FileName;
+                fileData = FileToArray(filePath);
+                DisplayData(fileData);
+            }
         }
     }
 }

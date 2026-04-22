@@ -48,9 +48,9 @@
             LowerCaseRadioButton = new RadioButton();
             ReverseCaseRadioButton = new RadioButton();
             ToolTip = new ToolTip(components);
-            DisplayLabel = new Label();
             menuStrip1 = new MenuStrip();
             FileTopMenuStrip = new ToolStripMenuItem();
+            OpenTopMenuItem = new ToolStripMenuItem();
             SubmitTopMenuItem = new ToolStripMenuItem();
             ClearTopMenuItem = new ToolStripMenuItem();
             ExitTopMenuItem = new ToolStripMenuItem();
@@ -61,15 +61,13 @@
             UpperContextMenuItem = new ToolStripMenuItem();
             LowerContextMenuItem = new ToolStripMenuItem();
             ReverseContextMenuItem = new ToolStripMenuItem();
-            pictureBox1 = new PictureBox();
             MainOpenFileDialog = new OpenFileDialog();
-            OpenTopMenuItem = new ToolStripMenuItem();
+            DisplayListBox = new ListBox();
             ButtonGroupBox.SuspendLayout();
             UserInfoGroupBox.SuspendLayout();
             menuStrip1.SuspendLayout();
             FormatOptionGroupBox.SuspendLayout();
             contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // SubmitButton
@@ -258,16 +256,6 @@
             ReverseCaseRadioButton.Text = "Reverse";
             ReverseCaseRadioButton.UseVisualStyleBackColor = true;
             // 
-            // DisplayLabel
-            // 
-            DisplayLabel.BackColor = Color.Gainsboro;
-            DisplayLabel.Font = new Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            DisplayLabel.Location = new Point(397, 57);
-            DisplayLabel.Name = "DisplayLabel";
-            DisplayLabel.Size = new Size(224, 252);
-            DisplayLabel.TabIndex = 25;
-            DisplayLabel.Click += label1_Click_1;
-            // 
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
@@ -285,6 +273,13 @@
             FileTopMenuStrip.Size = new Size(46, 24);
             FileTopMenuStrip.Text = "File";
             FileTopMenuStrip.Click += toolStripMenuItem1_Click;
+            // 
+            // OpenTopMenuItem
+            // 
+            OpenTopMenuItem.Name = "OpenTopMenuItem";
+            OpenTopMenuItem.Size = new Size(224, 26);
+            OpenTopMenuItem.Text = "Open";
+            OpenTopMenuItem.Click += OpenTopMenuItem_Click;
             // 
             // SubmitTopMenuItem
             // 
@@ -363,26 +358,17 @@
             ReverseContextMenuItem.Text = "Reverse Case";
             ReverseContextMenuItem.Click += ReverseContextMenuItem_Click;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.BackgroundImage = Properties.Resources.my_epic_hollow_knight_meme_drawings_v0_d8yttggc24pa1;
-            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(627, 57);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(161, 218);
-            pictureBox1.TabIndex = 28;
-            pictureBox1.TabStop = false;
-            // 
             // MainOpenFileDialog
             // 
             MainOpenFileDialog.FileName = "openFileDialog1";
             // 
-            // OpenTopMenuItem
+            // DisplayListBox
             // 
-            OpenTopMenuItem.Name = "OpenTopMenuItem";
-            OpenTopMenuItem.Size = new Size(224, 26);
-            OpenTopMenuItem.Text = "Open";
-            OpenTopMenuItem.Click += OpenTopMenuItem_Click;
+            DisplayListBox.FormattingEnabled = true;
+            DisplayListBox.Location = new Point(397, 37);
+            DisplayListBox.Name = "DisplayListBox";
+            DisplayListBox.Size = new Size(391, 284);
+            DisplayListBox.TabIndex = 28;
             // 
             // WinformExampleForm
             // 
@@ -392,9 +378,8 @@
             CancelButton = ClearButton;
             ClientSize = new Size(800, 450);
             ContextMenuStrip = contextMenuStrip1;
-            Controls.Add(pictureBox1);
+            Controls.Add(DisplayListBox);
             Controls.Add(FormatOptionGroupBox);
-            Controls.Add(DisplayLabel);
             Controls.Add(UserInfoGroupBox);
             Controls.Add(ButtonGroupBox);
             Controls.Add(menuStrip1);
@@ -412,7 +397,6 @@
             FormatOptionGroupBox.ResumeLayout(false);
             FormatOptionGroupBox.PerformLayout();
             contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -438,7 +422,6 @@
         private RadioButton LowerCaseRadioButton;
         private RadioButton ReverseCaseRadioButton;
         private ToolTip ToolTip;
-        private Label DisplayLabel;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem FileTopMenuStrip;
         private ToolStripMenuItem HelpStripMenu;
@@ -451,8 +434,8 @@
         private ToolStripMenuItem UpperContextMenuItem;
         private ToolStripMenuItem LowerContextMenuItem;
         private ToolStripMenuItem ReverseContextMenuItem;
-        private PictureBox pictureBox1;
         private OpenFileDialog MainOpenFileDialog;
         private ToolStripMenuItem OpenTopMenuItem;
+        private ListBox DisplayListBox;
     }
 }
