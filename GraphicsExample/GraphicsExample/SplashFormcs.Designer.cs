@@ -35,6 +35,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Fuchsia;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Zoom;
             ClientSize = new Size(681, 385);
@@ -42,6 +43,8 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "SplashFormcs";
             Text = "SplashFormcs";
+            TopMost = true;
+            TransparencyKey = Color.Fuchsia;
             ResumeLayout(false);
         }
 

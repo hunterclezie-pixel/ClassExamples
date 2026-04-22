@@ -62,6 +62,8 @@
             LowerContextMenuItem = new ToolStripMenuItem();
             ReverseContextMenuItem = new ToolStripMenuItem();
             pictureBox1 = new PictureBox();
+            MainOpenFileDialog = new OpenFileDialog();
+            OpenTopMenuItem = new ToolStripMenuItem();
             ButtonGroupBox.SuspendLayout();
             UserInfoGroupBox.SuspendLayout();
             menuStrip1.SuspendLayout();
@@ -278,7 +280,7 @@
             // 
             // FileTopMenuStrip
             // 
-            FileTopMenuStrip.DropDownItems.AddRange(new ToolStripItem[] { SubmitTopMenuItem, ClearTopMenuItem, ExitTopMenuItem });
+            FileTopMenuStrip.DropDownItems.AddRange(new ToolStripItem[] { OpenTopMenuItem, SubmitTopMenuItem, ClearTopMenuItem, ExitTopMenuItem });
             FileTopMenuStrip.Name = "FileTopMenuStrip";
             FileTopMenuStrip.Size = new Size(46, 24);
             FileTopMenuStrip.Text = "File";
@@ -287,21 +289,21 @@
             // SubmitTopMenuItem
             // 
             SubmitTopMenuItem.Name = "SubmitTopMenuItem";
-            SubmitTopMenuItem.Size = new Size(139, 26);
+            SubmitTopMenuItem.Size = new Size(224, 26);
             SubmitTopMenuItem.Text = "Submit";
             SubmitTopMenuItem.Click += SubmitButton_Click;
             // 
             // ClearTopMenuItem
             // 
             ClearTopMenuItem.Name = "ClearTopMenuItem";
-            ClearTopMenuItem.Size = new Size(139, 26);
+            ClearTopMenuItem.Size = new Size(224, 26);
             ClearTopMenuItem.Text = "Clear";
             ClearTopMenuItem.Click += ClearButton_Click;
             // 
             // ExitTopMenuItem
             // 
             ExitTopMenuItem.Name = "ExitTopMenuItem";
-            ExitTopMenuItem.Size = new Size(139, 26);
+            ExitTopMenuItem.Size = new Size(224, 26);
             ExitTopMenuItem.Text = "Exit";
             ExitTopMenuItem.Click += ExitButton_Click;
             // 
@@ -371,6 +373,17 @@
             pictureBox1.TabIndex = 28;
             pictureBox1.TabStop = false;
             // 
+            // MainOpenFileDialog
+            // 
+            MainOpenFileDialog.FileName = "openFileDialog1";
+            // 
+            // OpenTopMenuItem
+            // 
+            OpenTopMenuItem.Name = "OpenTopMenuItem";
+            OpenTopMenuItem.Size = new Size(224, 26);
+            OpenTopMenuItem.Text = "Open";
+            OpenTopMenuItem.Click += OpenTopMenuItem_Click;
+            // 
             // WinformExampleForm
             // 
             AcceptButton = SubmitButton;
@@ -439,5 +452,7 @@
         private ToolStripMenuItem LowerContextMenuItem;
         private ToolStripMenuItem ReverseContextMenuItem;
         private PictureBox pictureBox1;
+        private OpenFileDialog MainOpenFileDialog;
+        private ToolStripMenuItem OpenTopMenuItem;
     }
 }

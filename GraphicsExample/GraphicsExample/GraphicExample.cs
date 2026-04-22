@@ -7,6 +7,7 @@ namespace GraphicsExample
     {
         public GraphicExample()
         {
+            ShowSplashForm();
             InitializeComponent();
             DisplayPictureBox.MouseMove += DisplayPictureBox_MouseStuff;
             //DisplayPictureBox.MouseDown += DisplayPictureBox_MouseDown;
@@ -59,7 +60,6 @@ namespace GraphicsExample
             thePen.Dispose();
         }
 
-        //rectangle
         void DrawRectangle()
         {
             //create a graphics object named g that draws on the picture box
@@ -99,7 +99,6 @@ namespace GraphicsExample
             theBrush.Dispose();
         }
 
-        //text
         void DrawText()
         {
             //create a graphics object named g that draws on the picture box
@@ -119,7 +118,6 @@ namespace GraphicsExample
             theBrush.Dispose();
         }
 
-        //image
         void DrawImage()
         {
             //create a graphics object named g that draws on the picture box
@@ -207,6 +205,14 @@ namespace GraphicsExample
             }
         }
 
+        private void ShowSplashForm()
+        { 
+            SplashFormcs splashForm = new SplashFormcs(); // Create an instance of the splash form
+            splashForm.Show(); // Show the splash screen
+            System.Threading.Thread.Sleep(3000); // Show the splash screen for 3 seconds
+            splashForm.Close(); // Close the splash screen after the delay
+        }
+
         // Event handlers-------------------------------------------------------------------------
 
         private void ExitButton_Click(object sender, EventArgs e)
@@ -216,13 +222,13 @@ namespace GraphicsExample
 
         private void DrawButton_Click(object sender, EventArgs e)
         {
-            //DrawEllipse();
-            //DrawRectangle();
-            //DrawPie();
-            //DrawImage();
-            //DrawText();
-            DrawSineWave();
-            DrawGrid();
+            DrawEllipse();
+            DrawRectangle();
+            DrawPie();
+            DrawImage();
+            DrawText();
+            //DrawSineWave();
+            //DrawGrid();
         }
 
         private void DisplayPictureBox_MouseStuff(object? sender, MouseEventArgs e)
@@ -280,6 +286,7 @@ namespace GraphicsExample
             aboutForm.Show();
             this.Hide();
         }
+
         private void AboutForm_FormClosed(object? sender, FormClosedEventArgs e)
         {
             this.Show();
