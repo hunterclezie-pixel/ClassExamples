@@ -98,7 +98,7 @@ namespace WindformsExample
             }
         }
 
-        static int CountOfLinesIn(string filePath)
+        int CountOfLinesIn(string filePath)
         {
             int count = 0;
             using (StreamReader testFile = new StreamReader(filePath))
@@ -114,7 +114,7 @@ namespace WindformsExample
             return count;
         }
 
-        static string[,] FileToArray(string filePath)
+        string[,] FileToArray(string filePath)
         {
             string[,] customerData = new string[4, CountOfLinesIn(filePath)];
             string[] temp;
@@ -141,7 +141,7 @@ namespace WindformsExample
             return customerData;
         }
 
-        static void DisplayData(string[,] data)
+        void DisplayData(string[,] data)
         {
             string formattedRow = "";
 
