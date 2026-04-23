@@ -63,11 +63,17 @@
             ReverseContextMenuItem = new ToolStripMenuItem();
             MainOpenFileDialog = new OpenFileDialog();
             DisplayListBox = new ListBox();
+            FilterComboBox = new ComboBox();
+            FilterGroupBox = new GroupBox();
+            CityRadioButton = new RadioButton();
+            LastNameRadioButton = new RadioButton();
+            FirstNameRadioButton = new RadioButton();
             ButtonGroupBox.SuspendLayout();
             UserInfoGroupBox.SuspendLayout();
             menuStrip1.SuspendLayout();
             FormatOptionGroupBox.SuspendLayout();
             contextMenuStrip1.SuspendLayout();
+            FilterGroupBox.SuspendLayout();
             SuspendLayout();
             // 
             // SubmitButton
@@ -205,7 +211,7 @@
             // checkBox3
             // 
             checkBox3.AutoSize = true;
-            checkBox3.Location = new Point(145, 67);
+            checkBox3.Location = new Point(10, 152);
             checkBox3.Name = "checkBox3";
             checkBox3.Size = new Size(101, 24);
             checkBox3.TabIndex = 12;
@@ -215,7 +221,7 @@
             // checkBox4
             // 
             checkBox4.AutoSize = true;
-            checkBox4.Location = new Point(145, 34);
+            checkBox4.Location = new Point(10, 119);
             checkBox4.Name = "checkBox4";
             checkBox4.Size = new Size(101, 24);
             checkBox4.TabIndex = 1;
@@ -277,28 +283,28 @@
             // OpenTopMenuItem
             // 
             OpenTopMenuItem.Name = "OpenTopMenuItem";
-            OpenTopMenuItem.Size = new Size(224, 26);
+            OpenTopMenuItem.Size = new Size(139, 26);
             OpenTopMenuItem.Text = "Open";
             OpenTopMenuItem.Click += OpenTopMenuItem_Click;
             // 
             // SubmitTopMenuItem
             // 
             SubmitTopMenuItem.Name = "SubmitTopMenuItem";
-            SubmitTopMenuItem.Size = new Size(224, 26);
+            SubmitTopMenuItem.Size = new Size(139, 26);
             SubmitTopMenuItem.Text = "Submit";
             SubmitTopMenuItem.Click += SubmitButton_Click;
             // 
             // ClearTopMenuItem
             // 
             ClearTopMenuItem.Name = "ClearTopMenuItem";
-            ClearTopMenuItem.Size = new Size(224, 26);
+            ClearTopMenuItem.Size = new Size(139, 26);
             ClearTopMenuItem.Text = "Clear";
             ClearTopMenuItem.Click += ClearButton_Click;
             // 
             // ExitTopMenuItem
             // 
             ExitTopMenuItem.Name = "ExitTopMenuItem";
-            ExitTopMenuItem.Size = new Size(224, 26);
+            ExitTopMenuItem.Size = new Size(139, 26);
             ExitTopMenuItem.Text = "Exit";
             ExitTopMenuItem.Click += ExitButton_Click;
             // 
@@ -325,7 +331,7 @@
             FormatOptionGroupBox.Controls.Add(checkBox4);
             FormatOptionGroupBox.Location = new Point(12, 215);
             FormatOptionGroupBox.Name = "FormatOptionGroupBox";
-            FormatOptionGroupBox.Size = new Size(266, 131);
+            FormatOptionGroupBox.Size = new Size(128, 200);
             FormatOptionGroupBox.TabIndex = 27;
             FormatOptionGroupBox.TabStop = false;
             FormatOptionGroupBox.Text = "Format Options";
@@ -366,10 +372,63 @@
             // 
             DisplayListBox.Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             DisplayListBox.FormattingEnabled = true;
-            DisplayListBox.Location = new Point(397, 37);
+            DisplayListBox.Location = new Point(397, 83);
             DisplayListBox.Name = "DisplayListBox";
-            DisplayListBox.Size = new Size(391, 274);
+            DisplayListBox.Size = new Size(391, 238);
             DisplayListBox.TabIndex = 28;
+            // 
+            // FilterComboBox
+            // 
+            FilterComboBox.FormattingEnabled = true;
+            FilterComboBox.Location = new Point(397, 49);
+            FilterComboBox.Name = "FilterComboBox";
+            FilterComboBox.Size = new Size(249, 28);
+            FilterComboBox.TabIndex = 29;
+            // 
+            // FilterGroupBox
+            // 
+            FilterGroupBox.Controls.Add(FirstNameRadioButton);
+            FilterGroupBox.Controls.Add(LastNameRadioButton);
+            FilterGroupBox.Controls.Add(CityRadioButton);
+            FilterGroupBox.Location = new Point(146, 215);
+            FilterGroupBox.Name = "FilterGroupBox";
+            FilterGroupBox.Size = new Size(238, 200);
+            FilterGroupBox.TabIndex = 25;
+            FilterGroupBox.TabStop = false;
+            FilterGroupBox.Text = "Filter Options";
+            // 
+            // CityRadioButton
+            // 
+            CityRadioButton.AutoSize = true;
+            CityRadioButton.Location = new Point(6, 26);
+            CityRadioButton.Name = "CityRadioButton";
+            CityRadioButton.Size = new Size(55, 24);
+            CityRadioButton.TabIndex = 0;
+            CityRadioButton.TabStop = true;
+            CityRadioButton.Text = "City";
+            CityRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // LastNameRadioButton
+            // 
+            LastNameRadioButton.AutoSize = true;
+            LastNameRadioButton.Location = new Point(6, 54);
+            LastNameRadioButton.Name = "LastNameRadioButton";
+            LastNameRadioButton.Size = new Size(100, 24);
+            LastNameRadioButton.TabIndex = 1;
+            LastNameRadioButton.TabStop = true;
+            LastNameRadioButton.Text = "Last Name";
+            LastNameRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // FirstNameRadioButton
+            // 
+            FirstNameRadioButton.AutoSize = true;
+            FirstNameRadioButton.Location = new Point(6, 84);
+            FirstNameRadioButton.Name = "FirstNameRadioButton";
+            FirstNameRadioButton.Size = new Size(101, 24);
+            FirstNameRadioButton.TabIndex = 2;
+            FirstNameRadioButton.TabStop = true;
+            FirstNameRadioButton.Text = "First Name";
+            FirstNameRadioButton.UseVisualStyleBackColor = true;
             // 
             // WinformExampleForm
             // 
@@ -379,6 +438,8 @@
             CancelButton = ClearButton;
             ClientSize = new Size(800, 450);
             ContextMenuStrip = contextMenuStrip1;
+            Controls.Add(FilterGroupBox);
+            Controls.Add(FilterComboBox);
             Controls.Add(DisplayListBox);
             Controls.Add(FormatOptionGroupBox);
             Controls.Add(UserInfoGroupBox);
@@ -398,6 +459,8 @@
             FormatOptionGroupBox.ResumeLayout(false);
             FormatOptionGroupBox.PerformLayout();
             contextMenuStrip1.ResumeLayout(false);
+            FilterGroupBox.ResumeLayout(false);
+            FilterGroupBox.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -438,5 +501,10 @@
         private OpenFileDialog MainOpenFileDialog;
         private ToolStripMenuItem OpenTopMenuItem;
         private ListBox DisplayListBox;
+        private ComboBox FilterComboBox;
+        private GroupBox FilterGroupBox;
+        private RadioButton FirstNameRadioButton;
+        private RadioButton LastNameRadioButton;
+        private RadioButton CityRadioButton;
     }
 }
