@@ -5,10 +5,16 @@ namespace WindformsExample
         public WinformExampleForm()
         {
             InitializeComponent();
+            CityRadioButton.CheckedChanged += CityRadioButton_CheckedChanged;
             SetDefaults();
         }
 
-        string[,] customerData;
+        private void CityRadioButton_CheckedChanged(object? sender, EventArgs e)
+        {
+
+        }
+
+        string[,] customerData = new string[0 , 0];
 
         private void SetDefaults()
         {
@@ -22,6 +28,7 @@ namespace WindformsExample
             PhoneTextBox.BackColor = Color.LightYellow;
 
             UpperCaseRadioButton.Checked = true;
+            CityRadioButton.Checked = true;
             SubmitButton.Enabled = false;
             SubmitTopMenuItem.Enabled = false;
         }
@@ -167,6 +174,19 @@ namespace WindformsExample
                     DisplayListBox.Items.Add(formattedRow);
                 }
                 formattedRow = "";
+            }
+        }
+
+        void loadFilterCombobox()
+        {
+            FilterComboBox.Items.Clear();
+
+            for (int row = 0; row < this.customerData.GetUpperBound(0); row++)
+            {
+                if (this.customerData[2, row] != null)
+                { 
+                    FilterComboBox.Items.Add(this.customerData[2, row]);
+                }
             }
         }
 

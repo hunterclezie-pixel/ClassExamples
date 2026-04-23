@@ -331,7 +331,7 @@
             FormatOptionGroupBox.Controls.Add(checkBox4);
             FormatOptionGroupBox.Location = new Point(12, 215);
             FormatOptionGroupBox.Name = "FormatOptionGroupBox";
-            FormatOptionGroupBox.Size = new Size(128, 200);
+            FormatOptionGroupBox.Size = new Size(167, 200);
             FormatOptionGroupBox.TabIndex = 27;
             FormatOptionGroupBox.TabStop = false;
             FormatOptionGroupBox.Text = "Format Options";
@@ -390,9 +390,9 @@
             FilterGroupBox.Controls.Add(FirstNameRadioButton);
             FilterGroupBox.Controls.Add(LastNameRadioButton);
             FilterGroupBox.Controls.Add(CityRadioButton);
-            FilterGroupBox.Location = new Point(146, 215);
+            FilterGroupBox.Location = new Point(185, 215);
             FilterGroupBox.Name = "FilterGroupBox";
-            FilterGroupBox.Size = new Size(238, 200);
+            FilterGroupBox.Size = new Size(199, 200);
             FilterGroupBox.TabIndex = 25;
             FilterGroupBox.TabStop = false;
             FilterGroupBox.Text = "Filter Options";
