@@ -72,7 +72,7 @@
             // 
             // SubmitButton
             // 
-            SubmitButton.Location = new Point(7, 26);
+            SubmitButton.Location = new Point(29, 26);
             SubmitButton.Name = "SubmitButton";
             SubmitButton.Size = new Size(107, 50);
             SubmitButton.TabIndex = 5;
@@ -83,7 +83,7 @@
             // 
             // ExitButton
             // 
-            ExitButton.Location = new Point(233, 26);
+            ExitButton.Location = new Point(255, 26);
             ExitButton.Name = "ExitButton";
             ExitButton.Size = new Size(107, 50);
             ExitButton.TabIndex = 7;
@@ -112,7 +112,7 @@
             // 
             // ClearButton
             // 
-            ClearButton.Location = new Point(120, 26);
+            ClearButton.Location = new Point(142, 26);
             ClearButton.Name = "ClearButton";
             ClearButton.Size = new Size(107, 50);
             ClearButton.TabIndex = 6;
@@ -179,9 +179,9 @@
             ButtonGroupBox.Controls.Add(ExitButton);
             ButtonGroupBox.Controls.Add(SubmitButton);
             ButtonGroupBox.Controls.Add(ClearButton);
-            ButtonGroupBox.Location = new Point(390, 318);
+            ButtonGroupBox.Location = new Point(397, 327);
             ButtonGroupBox.Name = "ButtonGroupBox";
-            ButtonGroupBox.Size = new Size(351, 88);
+            ButtonGroupBox.Size = new Size(391, 88);
             ButtonGroupBox.TabIndex = 5;
             ButtonGroupBox.TabStop = false;
             // 
@@ -195,7 +195,7 @@
             UserInfoGroupBox.Controls.Add(CityLabel);
             UserInfoGroupBox.Controls.Add(AgeLabel);
             UserInfoGroupBox.Controls.Add(CityTextBox);
-            UserInfoGroupBox.Location = new Point(12, 57);
+            UserInfoGroupBox.Location = new Point(12, 37);
             UserInfoGroupBox.Name = "UserInfoGroupBox";
             UserInfoGroupBox.Size = new Size(372, 172);
             UserInfoGroupBox.TabIndex = 0;
@@ -323,7 +323,7 @@
             FormatOptionGroupBox.Controls.Add(UpperCaseRadioButton);
             FormatOptionGroupBox.Controls.Add(checkBox3);
             FormatOptionGroupBox.Controls.Add(checkBox4);
-            FormatOptionGroupBox.Location = new Point(12, 245);
+            FormatOptionGroupBox.Location = new Point(12, 215);
             FormatOptionGroupBox.Name = "FormatOptionGroupBox";
             FormatOptionGroupBox.Size = new Size(266, 131);
             FormatOptionGroupBox.TabIndex = 27;
@@ -364,10 +364,11 @@
             // 
             // DisplayListBox
             // 
+            DisplayListBox.Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             DisplayListBox.FormattingEnabled = true;
             DisplayListBox.Location = new Point(397, 37);
             DisplayListBox.Name = "DisplayListBox";
-            DisplayListBox.Size = new Size(391, 284);
+            DisplayListBox.Size = new Size(391, 274);
             DisplayListBox.TabIndex = 28;
             // 
             // WinformExampleForm
