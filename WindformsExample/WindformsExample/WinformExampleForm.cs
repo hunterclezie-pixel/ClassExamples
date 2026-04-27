@@ -146,22 +146,23 @@ namespace WindformsExample
 
             switch (true)
             {
-                case bool when FirstNameRadioButton.Checked:
-                    filterColumn = 0;
+                case bool when CityRadioButton.Checked:
+                    filterColumn = 2;
                     break;
                 case bool when LastNameRadioButton.Checked:
                     filterColumn = 1;
                     break;
-                case bool when CityRadioButton.Checked:
-                    filterColumn = 2;
+                case bool when FirstNameRadioButton.Checked:
+                    filterColumn = 0;
                     break;
+                    //default:
             }
 
             for (int row = 0; row < data.GetLength(1); row++)
             {
                 for (int column = 0; column < data.GetLength(0); column++)
                 {
-                    if (data[column, row] != null && data[filterColumn, row] == FilterComboBox.SelectedItem.ToString() || (FilterComboBox.SelectedIndex == 0))
+                    if (data[column, row] != null && (data[filterColumn, row] == FilterComboBox.SelectedItem.ToString() || FilterComboBox.SelectedIndex == 0))
                     {
                         formattedRow += data[column, row].PadRight(14);
                     }
@@ -180,29 +181,31 @@ namespace WindformsExample
             FilterComboBox.Items.Clear();
 
             switch (true)
-            { 
-                case bool when FirstNameRadioButton.Checked:
-                    column = 0;
+            {
+                case bool when CityRadioButton.Checked:
+                    column = 2;
                     break;
                 case bool when LastNameRadioButton.Checked:
                     column = 1;
                     break;
-                case bool when CityRadioButton.Checked:
-                    column = 2;
+                case bool when FirstNameRadioButton.Checked:
+                    column = 0;
                     break;
+                    //default:
             }
 
             for (int row = 0; (row < this.customerData.GetUpperBound(1)); row++)
             {
-                if (this.customerData[column, row] != null)
+                if (this.customerData[column, row] != null && FilterComboBox.Items.Contains(this.customerData[column, row]) != true)
                 {
+
                     FilterComboBox.Items.Add(this.customerData[column, row]); //add city 
                 }
             }
-
-            FilterComboBox.Items.Add("--Select--");
+            FilterComboBox.Items.Add("~Select~");
             FilterComboBox.Sorted = true;
-            FilterComboBox.SelectedItem = 0;
+            FilterComboBox.SelectedIndex = 0;
+
         }
 
         // Event Handlers Below -----------------------------------------------
