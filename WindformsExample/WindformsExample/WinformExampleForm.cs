@@ -1,3 +1,5 @@
+using System.Data.Common;
+
 namespace WindformsExample
 {
     public partial class WinformExampleForm : Form
@@ -5,13 +7,12 @@ namespace WindformsExample
         public WinformExampleForm()
         {
             InitializeComponent();
-            CityRadioButton.CheckedChanged += CityRadioButton_CheckedChanged;
-
-
             SetDefaults();
+            CityRadioButton.CheckedChanged += CityRadioButton_CheckedChanged;
+            LastNameRadioButton.CheckedChanged += CityRadioButton_CheckedChanged;
+            FirstNameRadioButton.CheckedChanged += CityRadioButton_CheckedChanged;
+            FilterComboBox.SelectedIndexChanged += FilterComboBox_SelectedIndexChanged;
         }
-
-
 
         string[,] customerData = new string[0, 0]; // persistent customer data
         private void SetDefaults()
@@ -95,7 +96,6 @@ namespace WindformsExample
             }
         }
 
-
         int CountOfLinesIn(string filePath)
         {
             int count = 0;
@@ -140,11 +140,28 @@ namespace WindformsExample
         {
             string[,] data = this.customerData;
             string formattedRow = "";
+            int filterColumn = 2;
+
+            DisplayListBox.Items.Clear();
+
+            switch (true)
+            {
+                case bool when FirstNameRadioButton.Checked:
+                    filterColumn = 0;
+                    break;
+                case bool when LastNameRadioButton.Checked:
+                    filterColumn = 1;
+                    break;
+                case bool when CityRadioButton.Checked:
+                    filterColumn = 2;
+                    break;
+            }
+
             for (int row = 0; row < data.GetLength(1); row++)
             {
                 for (int column = 0; column < data.GetLength(0); column++)
                 {
-                    if (data[column, row] != null)
+                    if (data[column, row] != null && data[filterColumn, row] == FilterComboBox.SelectedItem.ToString() || (FilterComboBox.SelectedIndex == 0))
                     {
                         formattedRow += data[column, row].PadRight(14);
                     }
@@ -159,22 +176,44 @@ namespace WindformsExample
 
         void LoadFilterComboBox()
         {
+            int column = 1;
             FilterComboBox.Items.Clear();
+
+            switch (true)
+            { 
+                case bool when FirstNameRadioButton.Checked:
+                    column = 0;
+                    break;
+                case bool when LastNameRadioButton.Checked:
+                    column = 1;
+                    break;
+                case bool when CityRadioButton.Checked:
+                    column = 2;
+                    break;
+            }
 
             for (int row = 0; (row < this.customerData.GetUpperBound(1)); row++)
             {
-                if (this.customerData[2, row] != null)
+                if (this.customerData[column, row] != null)
                 {
-
-                    FilterComboBox.Items.Add(this.customerData[2, row]); //add city 
+                    FilterComboBox.Items.Add(this.customerData[column, row]); //add city 
                 }
             }
+
+            FilterComboBox.Items.Add("--Select--");
+            FilterComboBox.Sorted = true;
+            FilterComboBox.SelectedItem = 0;
         }
 
         // Event Handlers Below -----------------------------------------------
         private void CityRadioButton_CheckedChanged(object? sender, EventArgs e)
         {
             LoadFilterComboBox();
+        }
+
+        private void FilterComboBox_SelectedIndexChanged(object? sender, EventArgs e)
+        {
+            DisplayData();
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
