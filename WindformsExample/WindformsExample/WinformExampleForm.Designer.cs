@@ -136,7 +136,6 @@
             AgeLabel.Size = new Size(36, 20);
             AgeLabel.TabIndex = 6;
             AgeLabel.Text = "Age";
-            AgeLabel.Click += label1_Click;
             // 
             // AgeTextBox
             // 
@@ -161,7 +160,6 @@
             PhoneTextBox.Name = "PhoneTextBox";
             PhoneTextBox.Size = new Size(293, 27);
             PhoneTextBox.TabIndex = 4;
-            PhoneTextBox.TextChanged += PhoneTextBox_TextChanged;
             // 
             // CityLabel
             // 
@@ -171,7 +169,6 @@
             CityLabel.Size = new Size(34, 20);
             CityLabel.TabIndex = 8;
             CityLabel.Text = "City";
-            CityLabel.Click += label3_Click;
             // 
             // CityTextBox
             // 
@@ -278,7 +275,6 @@
             FileTopMenuStrip.Name = "FileTopMenuStrip";
             FileTopMenuStrip.Size = new Size(46, 24);
             FileTopMenuStrip.Text = "File";
-            FileTopMenuStrip.Click += toolStripMenuItem1_Click;
             // 
             // OpenTopMenuItem
             // 
@@ -320,7 +316,6 @@
             AboutStripMenu.Name = "AboutStripMenu";
             AboutStripMenu.Size = new Size(133, 26);
             AboutStripMenu.Text = "About";
-            AboutStripMenu.Click += AboutStripMenu_Click;
             // 
             // FormatOptionGroupBox
             // 
@@ -450,7 +445,6 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Example Form";
             ToolTip.SetToolTip(this, "These are control boxes");
-            Load += Form1_Load;
             ButtonGroupBox.ResumeLayout(false);
             UserInfoGroupBox.ResumeLayout(false);
             UserInfoGroupBox.PerformLayout();

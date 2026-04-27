@@ -6,16 +6,14 @@ namespace WindformsExample
         {
             InitializeComponent();
             CityRadioButton.CheckedChanged += CityRadioButton_CheckedChanged;
+
+
             SetDefaults();
         }
 
-        private void CityRadioButton_CheckedChanged(object? sender, EventArgs e)
-        {
 
-        }
 
-        string[,] customerData = new string[0 , 0];
-
+        string[,] customerData = new string[0, 0]; // persistent customer data
         private void SetDefaults()
         {
             NameTextBox.Text = "";
@@ -23,9 +21,8 @@ namespace WindformsExample
             AgeTextBox.Text = "";
             AgeTextBox.BackColor = Color.LightYellow;
             CityTextBox.Text = "";
-            CityTextBox.BackColor = Color.LightYellow;
             PhoneTextBox.Text = "";
-            PhoneTextBox.BackColor = Color.LightYellow;
+            //DisplayLabel.Text = "";
 
             UpperCaseRadioButton.Checked = true;
             CityRadioButton.Checked = true;
@@ -36,53 +33,34 @@ namespace WindformsExample
         private bool ValidateFields()
         {
             bool valid = true;
-
             string message = "";
-            if (PhoneTextBox.Text == "")
-            {
-                message = "Phone number is required.\n" + message;
-                PhoneTextBox.Focus();
-            }
-
             if (CityTextBox.Text == "")
             {
-                message = "Location is required.\n" + message;
+                message = "City is required\n" + message;
                 CityTextBox.Focus();
             }
-
+            if (PhoneTextBox.Text == "")
+            {
+                message = "Phone is required\n" + message;
+                PhoneTextBox.Focus();
+            }
             if (AgeTextBox.Text == "")
             {
-                message = "Age is required.\n" + message;
+                message = "Age is required\n" + message;
                 AgeTextBox.Focus();
             }
-
             if (NameTextBox.Text == "")
             {
-                message = "Name is required.\n" + message;
+                message = "Name is required\n" + message;
                 NameTextBox.Focus();
             }
-
             if (message != "")
             {
                 valid = false;
                 MessageBox.Show(message);
-
             }
             return valid;
         }
-
-        private string Uppercase(string toUpper)
-        {
-            if (UpperCaseRadioButton.Checked)
-            {
-                return toUpper.ToUpper();
-            }
-            else
-            {
-                return toUpper;
-            }
-        }
-
         private string LowerCase(string toLower)
         {
             if (LowerCaseRadioButton.Checked)
@@ -94,7 +72,17 @@ namespace WindformsExample
                 return toLower;
             }
         }
-
+        private string UpperCase(string toUpper)
+        {
+            if (UpperCaseRadioButton.Checked)
+            {
+                return toUpper.ToUpper();
+            }
+            else
+            {
+                return toUpper;
+            }
+        }
         private string Reverse(string reverseThis)
         {
             if (ReverseCaseRadioButton.Checked)
@@ -107,11 +95,11 @@ namespace WindformsExample
             }
         }
 
+
         int CountOfLinesIn(string filePath)
         {
             int count = 0;
             using (StreamReader testFile = new StreamReader(filePath))
-
             {
                 do
                 {
@@ -119,7 +107,6 @@ namespace WindformsExample
                     count++;
                 } while (!testFile.EndOfStream);
             }
-
             return count;
         }
 
@@ -146,27 +133,20 @@ namespace WindformsExample
                     counter++;
                 } while (!testFile.EndOfStream);
             }
+            this.customerData = _customerData;
         }
 
         void DisplayData()
         {
             string[,] data = this.customerData;
             string formattedRow = "";
-
             for (int row = 0; row < data.GetLength(1); row++)
             {
                 for (int column = 0; column < data.GetLength(0); column++)
                 {
-                    try
+                    if (data[column, row] != null)
                     {
-                        if (data[column, row] != null)
-                        {
-                            formattedRow += data[column, row].PadRight(15);
-                        }
-                    }
-                    catch (Exception)
-                    {
-
+                        formattedRow += data[column, row].PadRight(14);
                     }
                 }
                 if (formattedRow != "")
@@ -177,23 +157,24 @@ namespace WindformsExample
             }
         }
 
-        void loadFilterCombobox()
+        void LoadFilterComboBox()
         {
             FilterComboBox.Items.Clear();
 
-            for (int row = 0; row < this.customerData.GetUpperBound(0); row++)
+            for (int row = 0; (row < this.customerData.GetUpperBound(1)); row++)
             {
                 if (this.customerData[2, row] != null)
-                { 
-                    FilterComboBox.Items.Add(this.customerData[2, row]);
+                {
+
+                    FilterComboBox.Items.Add(this.customerData[2, row]); //add city 
                 }
             }
         }
 
-        //Event Handlers Below
-        private void Form1_Load(object sender, EventArgs e)
+        // Event Handlers Below -----------------------------------------------
+        private void CityRadioButton_CheckedChanged(object? sender, EventArgs e)
         {
-
+            LoadFilterComboBox();
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
@@ -206,26 +187,16 @@ namespace WindformsExample
             if (ValidateFields())
             {
                 //this.Text = NameTextBox.Text;
-                //Uppercase();
+                //UpperCase();
                 //Reverse();
-                //DisplayLabel.Text = LowerCase(Reverse(Uppercase(NameTextBox.Text +
-                //    "\n" + AgeTextBox.Text +
-                //    "\n" + CityTextBox.Text +
-                //    "\n" + PhoneTextBox.Text)));
+                //DisplayLabel.Text = Reverse(UpperCase(LowerCase(NameTextBox.Text + "\n" +
+                //    AgeTextBox.Text + "\n" +
+                //    PhoneTextBox.Text + "\n" +
+                //    CityTextBox.Text)));
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
 
         }
@@ -241,69 +212,34 @@ namespace WindformsExample
             {
                 NameTextBox.BackColor = Color.White;
                 SubmitButton.Enabled = true;
+                SubmitTopMenuItem.Enabled = true;
             }
             else
             {
                 NameTextBox.BackColor = Color.LightYellow;
                 SubmitButton.Enabled = false;
+                SubmitTopMenuItem.Enabled = false;
             }
         }
-
         private void AgeTextBox_TextChanged(object sender, EventArgs e)
         {
             if (AgeTextBox.Text != "")
             {
                 AgeTextBox.BackColor = Color.White;
                 SubmitButton.Enabled = true;
+                SubmitTopMenuItem.Enabled = true;
             }
             else
             {
                 AgeTextBox.BackColor = Color.LightYellow;
                 SubmitButton.Enabled = false;
+                SubmitTopMenuItem.Enabled = false;
             }
         }
 
-        private void CityTextBox_TextChanged(object sender, EventArgs e)
+        private void AboutTopMenuItem_Click(object sender, EventArgs e)
         {
-            if (CityTextBox.Text != "")
-            {
-                CityTextBox.BackColor = Color.White;
-                SubmitButton.Enabled = true;
-            }
-            else
-            {
-                CityTextBox.BackColor = Color.LightYellow;
-                SubmitButton.Enabled = false;
-            }
-        }
-
-        private void PhoneTextBox_TextChanged(object sender, EventArgs e)
-        {
-            if (PhoneTextBox.Text != "")
-            {
-                PhoneTextBox.BackColor = Color.White;
-                SubmitButton.Enabled = true;
-            }
-            else
-            {
-                PhoneTextBox.BackColor = Color.LightYellow;
-                SubmitButton.Enabled = false;
-            }
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AboutStripMenu_Click(object sender, EventArgs e)
-        {
-            Console.WriteLine("No help available.");
+            MessageBox.Show("No help available");
         }
 
         private void UpperContextMenuItem_Click(object sender, EventArgs e)
@@ -326,15 +262,16 @@ namespace WindformsExample
             string filePath = "";
             string[,] fileData;
             MainOpenFileDialog.FileName = "";
-            MainOpenFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
-            MainOpenFileDialog.ShowDialog();
-
+            MainOpenFileDialog.Filter = "txt files (*.txt)|*.txt|wav files (*.wav)|*.wav|All files (*.*)|*.*";
+            // if the user hits ok open the file and display file contents
             if (MainOpenFileDialog.ShowDialog() == DialogResult.OK)
-            { 
+            {
                 filePath = MainOpenFileDialog.FileName;
                 FileToArray(filePath);
                 DisplayData();
+
             }
+
         }
     }
 }
