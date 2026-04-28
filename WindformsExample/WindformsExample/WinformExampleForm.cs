@@ -7,14 +7,19 @@ namespace WindformsExample
         public WinformExampleForm()
         {
             InitializeComponent();
-            SetDefaults();
             CityRadioButton.CheckedChanged += CityRadioButton_CheckedChanged;
             LastNameRadioButton.CheckedChanged += CityRadioButton_CheckedChanged;
             FirstNameRadioButton.CheckedChanged += CityRadioButton_CheckedChanged;
             FilterComboBox.SelectedIndexChanged += FilterComboBox_SelectedIndexChanged;
+
+
+            FileToArray(this.filePath);
+            SetDefaults();
         }
 
         string[,] customerData = new string[0, 0]; // persistent customer data
+        string filePath = @"C:\Users\clezh\OneDrive\Documents\Robotics\4th Semester\Github Assignments\ClassExamples\WindformsExample\WindformsExample\email.txt";
+
         private void SetDefaults()
         {
             NameTextBox.Text = "";
@@ -62,6 +67,7 @@ namespace WindformsExample
             }
             return valid;
         }
+
         private string LowerCase(string toLower)
         {
             if (LowerCaseRadioButton.Checked)
@@ -73,6 +79,7 @@ namespace WindformsExample
                 return toLower;
             }
         }
+
         private string UpperCase(string toUpper)
         {
             if (UpperCaseRadioButton.Checked)
@@ -84,6 +91,7 @@ namespace WindformsExample
                 return toUpper;
             }
         }
+
         private string Reverse(string reverseThis)
         {
             if (ReverseCaseRadioButton.Checked)
@@ -169,7 +177,16 @@ namespace WindformsExample
                 }
                 if (formattedRow != "")
                 {
-                    DisplayListBox.Items.Add(formattedRow);
+                    //System.String.
+                    if (formattedRow.Contains(SearchTextBox.Text, StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        DisplayListBox.Items.Add(formattedRow);
+                    }
+                    else
+                    { 
+                    
+                    }
+
                 }
                 formattedRow = "";
             }
@@ -263,6 +280,7 @@ namespace WindformsExample
                 SubmitTopMenuItem.Enabled = false;
             }
         }
+
         private void AgeTextBox_TextChanged(object sender, EventArgs e)
         {
             if (AgeTextBox.Text != "")
@@ -314,6 +332,14 @@ namespace WindformsExample
 
             }
 
+        }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            CityRadioButton.Checked = true;
+            FilterComboBox.SelectedIndex = 0;
+            DisplayData();
+            SearchTextBox.Text = "";
         }
     }
 }

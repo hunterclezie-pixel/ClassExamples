@@ -65,9 +65,11 @@
             DisplayListBox = new ListBox();
             FilterComboBox = new ComboBox();
             FilterGroupBox = new GroupBox();
-            CityRadioButton = new RadioButton();
-            LastNameRadioButton = new RadioButton();
             FirstNameRadioButton = new RadioButton();
+            LastNameRadioButton = new RadioButton();
+            CityRadioButton = new RadioButton();
+            SearchTextBox = new TextBox();
+            SearchButton = new Button();
             ButtonGroupBox.SuspendLayout();
             UserInfoGroupBox.SuspendLayout();
             menuStrip1.SuspendLayout();
@@ -78,7 +80,7 @@
             // 
             // SubmitButton
             // 
-            SubmitButton.Location = new Point(29, 26);
+            SubmitButton.Location = new Point(28, 26);
             SubmitButton.Name = "SubmitButton";
             SubmitButton.Size = new Size(107, 50);
             SubmitButton.TabIndex = 5;
@@ -89,7 +91,7 @@
             // 
             // ExitButton
             // 
-            ExitButton.Location = new Point(255, 26);
+            ExitButton.Location = new Point(254, 26);
             ExitButton.Name = "ExitButton";
             ExitButton.Size = new Size(107, 50);
             ExitButton.TabIndex = 7;
@@ -103,7 +105,7 @@
             // 
             NameTextBox.Location = new Point(73, 28);
             NameTextBox.Name = "NameTextBox";
-            NameTextBox.Size = new Size(293, 27);
+            NameTextBox.Size = new Size(206, 27);
             NameTextBox.TabIndex = 1;
             NameTextBox.TextChanged += NameTextBox_TextChanged;
             // 
@@ -118,7 +120,7 @@
             // 
             // ClearButton
             // 
-            ClearButton.Location = new Point(142, 26);
+            ClearButton.Location = new Point(141, 26);
             ClearButton.Name = "ClearButton";
             ClearButton.Size = new Size(107, 50);
             ClearButton.TabIndex = 6;
@@ -141,7 +143,7 @@
             // 
             AgeTextBox.Location = new Point(73, 61);
             AgeTextBox.Name = "AgeTextBox";
-            AgeTextBox.Size = new Size(293, 27);
+            AgeTextBox.Size = new Size(206, 27);
             AgeTextBox.TabIndex = 2;
             AgeTextBox.TextChanged += AgeTextBox_TextChanged;
             // 
@@ -158,7 +160,7 @@
             // 
             PhoneTextBox.Location = new Point(73, 127);
             PhoneTextBox.Name = "PhoneTextBox";
-            PhoneTextBox.Size = new Size(293, 27);
+            PhoneTextBox.Size = new Size(206, 27);
             PhoneTextBox.TabIndex = 4;
             // 
             // CityLabel
@@ -174,7 +176,7 @@
             // 
             CityTextBox.Location = new Point(73, 94);
             CityTextBox.Name = "CityTextBox";
-            CityTextBox.Size = new Size(293, 27);
+            CityTextBox.Size = new Size(206, 27);
             CityTextBox.TabIndex = 3;
             // 
             // ButtonGroupBox
@@ -200,7 +202,7 @@
             UserInfoGroupBox.Controls.Add(CityTextBox);
             UserInfoGroupBox.Location = new Point(12, 37);
             UserInfoGroupBox.Name = "UserInfoGroupBox";
-            UserInfoGroupBox.Size = new Size(372, 172);
+            UserInfoGroupBox.Size = new Size(287, 172);
             UserInfoGroupBox.TabIndex = 0;
             UserInfoGroupBox.TabStop = false;
             UserInfoGroupBox.Text = "User Info";
@@ -377,7 +379,7 @@
             FilterComboBox.FormattingEnabled = true;
             FilterComboBox.Location = new Point(397, 49);
             FilterComboBox.Name = "FilterComboBox";
-            FilterComboBox.Size = new Size(249, 28);
+            FilterComboBox.Size = new Size(206, 28);
             FilterComboBox.TabIndex = 29;
             // 
             // FilterGroupBox
@@ -392,16 +394,16 @@
             FilterGroupBox.TabStop = false;
             FilterGroupBox.Text = "Filter Options";
             // 
-            // CityRadioButton
+            // FirstNameRadioButton
             // 
-            CityRadioButton.AutoSize = true;
-            CityRadioButton.Location = new Point(6, 26);
-            CityRadioButton.Name = "CityRadioButton";
-            CityRadioButton.Size = new Size(55, 24);
-            CityRadioButton.TabIndex = 0;
-            CityRadioButton.TabStop = true;
-            CityRadioButton.Text = "City";
-            CityRadioButton.UseVisualStyleBackColor = true;
+            FirstNameRadioButton.AutoSize = true;
+            FirstNameRadioButton.Location = new Point(6, 84);
+            FirstNameRadioButton.Name = "FirstNameRadioButton";
+            FirstNameRadioButton.Size = new Size(101, 24);
+            FirstNameRadioButton.TabIndex = 2;
+            FirstNameRadioButton.TabStop = true;
+            FirstNameRadioButton.Text = "First Name";
+            FirstNameRadioButton.UseVisualStyleBackColor = true;
             // 
             // LastNameRadioButton
             // 
@@ -414,16 +416,33 @@
             LastNameRadioButton.Text = "Last Name";
             LastNameRadioButton.UseVisualStyleBackColor = true;
             // 
-            // FirstNameRadioButton
+            // CityRadioButton
             // 
-            FirstNameRadioButton.AutoSize = true;
-            FirstNameRadioButton.Location = new Point(6, 84);
-            FirstNameRadioButton.Name = "FirstNameRadioButton";
-            FirstNameRadioButton.Size = new Size(101, 24);
-            FirstNameRadioButton.TabIndex = 2;
-            FirstNameRadioButton.TabStop = true;
-            FirstNameRadioButton.Text = "First Name";
-            FirstNameRadioButton.UseVisualStyleBackColor = true;
+            CityRadioButton.AutoSize = true;
+            CityRadioButton.Location = new Point(6, 26);
+            CityRadioButton.Name = "CityRadioButton";
+            CityRadioButton.Size = new Size(55, 24);
+            CityRadioButton.TabIndex = 0;
+            CityRadioButton.TabStop = true;
+            CityRadioButton.Text = "City";
+            CityRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // SearchTextBox
+            // 
+            SearchTextBox.Location = new Point(609, 49);
+            SearchTextBox.Name = "SearchTextBox";
+            SearchTextBox.Size = new Size(179, 27);
+            SearchTextBox.TabIndex = 30;
+            // 
+            // SearchButton
+            // 
+            SearchButton.Location = new Point(305, 45);
+            SearchButton.Name = "SearchButton";
+            SearchButton.Size = new Size(89, 35);
+            SearchButton.TabIndex = 31;
+            SearchButton.Text = "Search";
+            SearchButton.UseVisualStyleBackColor = true;
+            SearchButton.Click += SearchButton_Click;
             // 
             // WinformExampleForm
             // 
@@ -433,6 +452,8 @@
             CancelButton = ClearButton;
             ClientSize = new Size(800, 450);
             ContextMenuStrip = contextMenuStrip1;
+            Controls.Add(SearchButton);
+            Controls.Add(SearchTextBox);
             Controls.Add(FilterGroupBox);
             Controls.Add(FilterComboBox);
             Controls.Add(DisplayListBox);
@@ -500,5 +521,7 @@
         private RadioButton FirstNameRadioButton;
         private RadioButton LastNameRadioButton;
         private RadioButton CityRadioButton;
+        private TextBox SearchTextBox;
+        private Button SearchButton;
     }
 }
